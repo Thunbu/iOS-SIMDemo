@@ -1,0 +1,1079 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		62465F2E2599CD1800437B8A /* TBIM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62465F2A2599CD0B00437B8A /* TBIM.framework */; };
+		62465F2F2599CD1800437B8A /* TBIM.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 62465F2A2599CD0B00437B8A /* TBIM.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		624C9F81254FA5D40011D4C5 /* TBPreLoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 624C9F80254FA5D40011D4C5 /* TBPreLoginVC.m */; };
+		624C9FC7254FD2150011D4C5 /* AppMacro.h in Sources */ = {isa = PBXBuildFile; fileRef = 624C9FC6254FD2150011D4C5 /* AppMacro.h */; };
+		6264BBA325539529005C897C /* TBChatMsgPopMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 6264BBA225539529005C897C /* TBChatMsgPopMenu.m */; };
+		62EC9A18254FD4C600997836 /* TBChatVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 62EC9A17254FD4C600997836 /* TBChatVC.m */; };
+		62EC9A1E254FD4EC00997836 /* TBChatBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 62EC9A1D254FD4EC00997836 /* TBChatBottomView.m */; };
+		62EC9A24254FDEC200997836 /* AppUnitParam.m in Sources */ = {isa = PBXBuildFile; fileRef = 62EC9A23254FDEC200997836 /* AppUnitParam.m */; };
+		62EC9A2A254FE64900997836 /* TBSendMessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 62EC9A29254FE64900997836 /* TBSendMessageModel.m */; };
+		62EC9A38254FF2D500997836 /* TBChatBaseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 62EC9A37254FF2D500997836 /* TBChatBaseCell.m */; };
+		62EC9A42254FF31100997836 /* TBChatTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 62EC9A41254FF31100997836 /* TBChatTextCell.m */; };
+		62EC9A48254FFEA700997836 /* NSString+Addtions.m in Sources */ = {isa = PBXBuildFile; fileRef = 62EC9A47254FFEA700997836 /* NSString+Addtions.m */; };
+		62EC9A4E255001DB00997836 /* TBChatMsgManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 62EC9A4D255001DB00997836 /* TBChatMsgManager.m */; };
+		62EC9A6C25513C6E00997836 /* MFToast.m in Sources */ = {isa = PBXBuildFile; fileRef = 62EC9A6B25513C6E00997836 /* MFToast.m */; };
+		62EC9A722551537A00997836 /* TBSingleTxtCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 62EC9A712551537A00997836 /* TBSingleTxtCell.m */; };
+		62EC9A85255249DF00997836 /* TBEmojiHelp.m in Sources */ = {isa = PBXBuildFile; fileRef = 62EC9A84255249DF00997836 /* TBEmojiHelp.m */; };
+		62EC9A8B255249EE00997836 /* NSString+Rich.m in Sources */ = {isa = PBXBuildFile; fileRef = 62EC9A8A255249EE00997836 /* NSString+Rich.m */; };
+		62EC9A9125524A4B00997836 /* TBCustomEmojiModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 62EC9A9025524A4B00997836 /* TBCustomEmojiModel.m */; };
+		62EC9A9D25524A7800997836 /* RichTextAttachment.m in Sources */ = {isa = PBXBuildFile; fileRef = 62EC9A9B25524A7700997836 /* RichTextAttachment.m */; };
+		62EC9A9E25524A7800997836 /* UITextView+Rich.m in Sources */ = {isa = PBXBuildFile; fileRef = 62EC9A9C25524A7700997836 /* UITextView+Rich.m */; };
+		62EC9AB825524EA400997836 /* TBEmojiKeyboardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 62EC9AB725524EA400997836 /* TBEmojiKeyboardView.m */; };
+		62EC9AE725528ABB00997836 /* TBChatIMageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 62EC9AE625528ABB00997836 /* TBChatIMageCell.m */; };
+		62FCCC582553CDB2001740FE /* TBChatVideoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 62FCCC572553CDB2001740FE /* TBChatVideoCell.m */; };
+		62FCCC5E2553D4B0001740FE /* TBChatMsgPreview.m in Sources */ = {isa = PBXBuildFile; fileRef = 62FCCC5D2553D4B0001740FE /* TBChatMsgPreview.m */; };
+		6E16D001254F9477002DAB09 /* TBChatManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E16D000254F9477002DAB09 /* TBChatManager.m */; };
+		6E16D00D254FEC8F002DAB09 /* NSArray+SIMMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E16D00C254FEC8F002DAB09 /* NSArray+SIMMessage.m */; };
+		6E49D98525416F3B00010564 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E49D98425416F3B00010564 /* AppDelegate.m */; };
+		6E49D98E25416F3B00010564 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E49D98C25416F3B00010564 /* Main.storyboard */; };
+		6E49D99025416F3B00010564 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E49D98F25416F3B00010564 /* Assets.xcassets */; };
+		6E49D99325416F3B00010564 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E49D99125416F3B00010564 /* LaunchScreen.storyboard */; };
+		6E49D99625416F3B00010564 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E49D99525416F3B00010564 /* main.m */; };
+		6E49D9A025416F3C00010564 /* SIMDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E49D99F25416F3C00010564 /* SIMDemoTests.m */; };
+		6E49D9AB25416F3C00010564 /* SIMDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E49D9AA25416F3C00010564 /* SIMDemoUITests.m */; };
+		6E8841AB2548250A007103C8 /* IMChat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E8841AA2548250A007103C8 /* IMChat.storyboard */; };
+		6E8841CC25483D3B007103C8 /* TBMainTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E8841CB25483D3B007103C8 /* TBMainTabBarController.m */; };
+		6E8841D525483DC4007103C8 /* TBSessionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E8841D425483DC4007103C8 /* TBSessionController.m */; };
+		6E8841FD254845A3007103C8 /* TBSessionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E8841FC254845A3007103C8 /* TBSessionCell.m */; };
+		6E88425925493E6B007103C8 /* UIColor+TB.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E88425825493E6B007103C8 /* UIColor+TB.m */; };
+		6E8842632549452A007103C8 /* NSDate+Show.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E8842622549452A007103C8 /* NSDate+Show.m */; };
+		6E884269254949D1007103C8 /* TBSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E884268254949D1007103C8 /* TBSessionManager.m */; };
+		6E884285254BA306007103C8 /* TBGroupManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E884284254BA306007103C8 /* TBGroupManager.m */; };
+		6E88428E254BB9A5007103C8 /* TBNetReqManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E88428D254BB9A5007103C8 /* TBNetReqManager.m */; };
+		90048C3A2554120D590D900C /* Pods_SIMDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4362A122E353D8D8AB880C0 /* Pods_SIMDemoTests.framework */; };
+		A70A948277EEB0E8C1A80047 /* Pods_SIMDemo_SIMDemoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE05C2218513F6F15E7EEC98 /* Pods_SIMDemo_SIMDemoUITests.framework */; };
+		F99F47870B3E7E8730826111 /* Pods_SIMDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6DC91A88F4C119BBE211D70 /* Pods_SIMDemo.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		6E49D99C25416F3C00010564 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6E49D97825416F3B00010564 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6E49D97F25416F3B00010564;
+			remoteInfo = SIMDemo;
+		};
+		6E49D9A725416F3C00010564 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6E49D97825416F3B00010564 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6E49D97F25416F3B00010564;
+			remoteInfo = SIMDemo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		62465EDE2599C58900437B8A /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				62465F2F2599CD1800437B8A /* TBIM.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		29F2B1E0E9074E86A4EB356F /* Pods-SIMDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SIMDemo.debug.xcconfig"; path = "Target Support Files/Pods-SIMDemo/Pods-SIMDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		62465F2A2599CD0B00437B8A /* TBIM.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TBIM.framework; sourceTree = "<group>"; };
+		624C9F7F254FA5D40011D4C5 /* TBPreLoginVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TBPreLoginVC.h; sourceTree = "<group>"; };
+		624C9F80254FA5D40011D4C5 /* TBPreLoginVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TBPreLoginVC.m; sourceTree = "<group>"; };
+		624C9FC6254FD2150011D4C5 /* AppMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppMacro.h; sourceTree = "<group>"; };
+		6264BBA125539529005C897C /* TBChatMsgPopMenu.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TBChatMsgPopMenu.h; sourceTree = "<group>"; };
+		6264BBA225539529005C897C /* TBChatMsgPopMenu.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TBChatMsgPopMenu.m; sourceTree = "<group>"; };
+		62EC9A16254FD4C600997836 /* TBChatVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TBChatVC.h; sourceTree = "<group>"; };
+		62EC9A17254FD4C600997836 /* TBChatVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TBChatVC.m; sourceTree = "<group>"; };
+		62EC9A1C254FD4EC00997836 /* TBChatBottomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBChatBottomView.h; sourceTree = "<group>"; };
+		62EC9A1D254FD4EC00997836 /* TBChatBottomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBChatBottomView.m; sourceTree = "<group>"; };
+		62EC9A22254FDEC200997836 /* AppUnitParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppUnitParam.h; sourceTree = "<group>"; };
+		62EC9A23254FDEC200997836 /* AppUnitParam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppUnitParam.m; sourceTree = "<group>"; };
+		62EC9A28254FE64900997836 /* TBSendMessageModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TBSendMessageModel.h; sourceTree = "<group>"; };
+		62EC9A29254FE64900997836 /* TBSendMessageModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TBSendMessageModel.m; sourceTree = "<group>"; };
+		62EC9A36254FF2D500997836 /* TBChatBaseCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TBChatBaseCell.h; sourceTree = "<group>"; };
+		62EC9A37254FF2D500997836 /* TBChatBaseCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TBChatBaseCell.m; sourceTree = "<group>"; };
+		62EC9A40254FF31100997836 /* TBChatTextCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TBChatTextCell.h; sourceTree = "<group>"; };
+		62EC9A41254FF31100997836 /* TBChatTextCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TBChatTextCell.m; sourceTree = "<group>"; };
+		62EC9A46254FFEA700997836 /* NSString+Addtions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Addtions.h"; sourceTree = "<group>"; };
+		62EC9A47254FFEA700997836 /* NSString+Addtions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Addtions.m"; sourceTree = "<group>"; };
+		62EC9A4C255001DB00997836 /* TBChatMsgManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TBChatMsgManager.h; sourceTree = "<group>"; };
+		62EC9A4D255001DB00997836 /* TBChatMsgManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TBChatMsgManager.m; sourceTree = "<group>"; };
+		62EC9A6A25513C6E00997836 /* MFToast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFToast.h; sourceTree = "<group>"; };
+		62EC9A6B25513C6E00997836 /* MFToast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFToast.m; sourceTree = "<group>"; };
+		62EC9A702551537A00997836 /* TBSingleTxtCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TBSingleTxtCell.h; sourceTree = "<group>"; };
+		62EC9A712551537A00997836 /* TBSingleTxtCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TBSingleTxtCell.m; sourceTree = "<group>"; };
+		62EC9A83255249DE00997836 /* TBEmojiHelp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBEmojiHelp.h; sourceTree = "<group>"; };
+		62EC9A84255249DF00997836 /* TBEmojiHelp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBEmojiHelp.m; sourceTree = "<group>"; };
+		62EC9A89255249EE00997836 /* NSString+Rich.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Rich.h"; sourceTree = "<group>"; };
+		62EC9A8A255249EE00997836 /* NSString+Rich.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Rich.m"; sourceTree = "<group>"; };
+		62EC9A8F25524A4B00997836 /* TBCustomEmojiModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBCustomEmojiModel.h; sourceTree = "<group>"; };
+		62EC9A9025524A4B00997836 /* TBCustomEmojiModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBCustomEmojiModel.m; sourceTree = "<group>"; };
+		62EC9A9925524A7700997836 /* UITextView+Rich.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextView+Rich.h"; sourceTree = "<group>"; };
+		62EC9A9A25524A7700997836 /* RichTextAttachment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RichTextAttachment.h; sourceTree = "<group>"; };
+		62EC9A9B25524A7700997836 /* RichTextAttachment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RichTextAttachment.m; sourceTree = "<group>"; };
+		62EC9A9C25524A7700997836 /* UITextView+Rich.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextView+Rich.m"; sourceTree = "<group>"; };
+		62EC9AB625524EA400997836 /* TBEmojiKeyboardView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TBEmojiKeyboardView.h; sourceTree = "<group>"; };
+		62EC9AB725524EA400997836 /* TBEmojiKeyboardView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TBEmojiKeyboardView.m; sourceTree = "<group>"; };
+		62EC9AE525528ABB00997836 /* TBChatIMageCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TBChatIMageCell.h; sourceTree = "<group>"; };
+		62EC9AE625528ABB00997836 /* TBChatIMageCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TBChatIMageCell.m; sourceTree = "<group>"; };
+		62FCCC562553CDB2001740FE /* TBChatVideoCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TBChatVideoCell.h; sourceTree = "<group>"; };
+		62FCCC572553CDB2001740FE /* TBChatVideoCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TBChatVideoCell.m; sourceTree = "<group>"; };
+		62FCCC5C2553D4B0001740FE /* TBChatMsgPreview.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TBChatMsgPreview.h; sourceTree = "<group>"; };
+		62FCCC5D2553D4B0001740FE /* TBChatMsgPreview.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TBChatMsgPreview.m; sourceTree = "<group>"; };
+		6E16CFFF254F9477002DAB09 /* TBChatManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TBChatManager.h; sourceTree = "<group>"; };
+		6E16D000254F9477002DAB09 /* TBChatManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TBChatManager.m; sourceTree = "<group>"; };
+		6E16D00B254FEC8F002DAB09 /* NSArray+SIMMessage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSArray+SIMMessage.h"; sourceTree = "<group>"; };
+		6E16D00C254FEC8F002DAB09 /* NSArray+SIMMessage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSArray+SIMMessage.m"; sourceTree = "<group>"; };
+		6E49D98025416F3B00010564 /* SIMDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SIMDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6E49D98325416F3B00010564 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		6E49D98425416F3B00010564 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		6E49D98D25416F3B00010564 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		6E49D98F25416F3B00010564 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6E49D99225416F3B00010564 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		6E49D99425416F3B00010564 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6E49D99525416F3B00010564 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		6E49D99B25416F3C00010564 /* SIMDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SIMDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6E49D99F25416F3C00010564 /* SIMDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SIMDemoTests.m; sourceTree = "<group>"; };
+		6E49D9A125416F3C00010564 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6E49D9A625416F3C00010564 /* SIMDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SIMDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6E49D9AA25416F3C00010564 /* SIMDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SIMDemoUITests.m; sourceTree = "<group>"; };
+		6E49D9AC25416F3C00010564 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6E8841AA2548250A007103C8 /* IMChat.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = IMChat.storyboard; sourceTree = "<group>"; };
+		6E8841CA25483D3B007103C8 /* TBMainTabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TBMainTabBarController.h; sourceTree = "<group>"; };
+		6E8841CB25483D3B007103C8 /* TBMainTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TBMainTabBarController.m; sourceTree = "<group>"; };
+		6E8841D325483DC4007103C8 /* TBSessionController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TBSessionController.h; sourceTree = "<group>"; };
+		6E8841D425483DC4007103C8 /* TBSessionController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TBSessionController.m; sourceTree = "<group>"; };
+		6E8841FB254845A3007103C8 /* TBSessionCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TBSessionCell.h; sourceTree = "<group>"; };
+		6E8841FC254845A3007103C8 /* TBSessionCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TBSessionCell.m; sourceTree = "<group>"; };
+		6E88420F2549032D007103C8 /* SIMDemo.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SIMDemo.pch; sourceTree = "<group>"; };
+		6E88425725493E6A007103C8 /* UIColor+TB.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+TB.h"; sourceTree = "<group>"; };
+		6E88425825493E6B007103C8 /* UIColor+TB.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+TB.m"; sourceTree = "<group>"; };
+		6E8842612549452A007103C8 /* NSDate+Show.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Show.h"; sourceTree = "<group>"; };
+		6E8842622549452A007103C8 /* NSDate+Show.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Show.m"; sourceTree = "<group>"; };
+		6E884267254949D1007103C8 /* TBSessionManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TBSessionManager.h; sourceTree = "<group>"; };
+		6E884268254949D1007103C8 /* TBSessionManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TBSessionManager.m; sourceTree = "<group>"; };
+		6E884283254BA306007103C8 /* TBGroupManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TBGroupManager.h; sourceTree = "<group>"; };
+		6E884284254BA306007103C8 /* TBGroupManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TBGroupManager.m; sourceTree = "<group>"; };
+		6E88428C254BB9A5007103C8 /* TBNetReqManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TBNetReqManager.h; sourceTree = "<group>"; };
+		6E88428D254BB9A5007103C8 /* TBNetReqManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TBNetReqManager.m; sourceTree = "<group>"; };
+		73BF244536E3BC21F3D52D04 /* Pods-SIMDemo-SIMDemoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SIMDemo-SIMDemoUITests.release.xcconfig"; path = "Target Support Files/Pods-SIMDemo-SIMDemoUITests/Pods-SIMDemo-SIMDemoUITests.release.xcconfig"; sourceTree = "<group>"; };
+		7BBE219EEC867E525398EA23 /* Pods-SIMDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SIMDemoTests.debug.xcconfig"; path = "Target Support Files/Pods-SIMDemoTests/Pods-SIMDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
+		D4362A122E353D8D8AB880C0 /* Pods_SIMDemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SIMDemoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D6DC91A88F4C119BBE211D70 /* Pods_SIMDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SIMDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE05C2218513F6F15E7EEC98 /* Pods_SIMDemo_SIMDemoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SIMDemo_SIMDemoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E2CB813A05517C8A72136D4A /* Pods-SIMDemo-SIMDemoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SIMDemo-SIMDemoUITests.debug.xcconfig"; path = "Target Support Files/Pods-SIMDemo-SIMDemoUITests/Pods-SIMDemo-SIMDemoUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		E465EB20F64564B3B9EB3ED5 /* Pods-SIMDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SIMDemo.release.xcconfig"; path = "Target Support Files/Pods-SIMDemo/Pods-SIMDemo.release.xcconfig"; sourceTree = "<group>"; };
+		F1C9F4FBCFD115D75ECC147B /* Pods-SIMDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SIMDemoTests.release.xcconfig"; path = "Target Support Files/Pods-SIMDemoTests/Pods-SIMDemoTests.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6E49D97D25416F3B00010564 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				62465F2E2599CD1800437B8A /* TBIM.framework in Frameworks */,
+				F99F47870B3E7E8730826111 /* Pods_SIMDemo.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6E49D99825416F3C00010564 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				90048C3A2554120D590D900C /* Pods_SIMDemoTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6E49D9A325416F3C00010564 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A70A948277EEB0E8C1A80047 /* Pods_SIMDemo_SIMDemoUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		624C9FCB254FD21E0011D4C5 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				624C9FC6254FD2150011D4C5 /* AppMacro.h */,
+				62EC9A22254FDEC200997836 /* AppUnitParam.h */,
+				62EC9A23254FDEC200997836 /* AppUnitParam.m */,
+				62EC9A6A25513C6E00997836 /* MFToast.h */,
+				62EC9A6B25513C6E00997836 /* MFToast.m */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		62EC9A31254FF28400997836 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				62EC9A1C254FD4EC00997836 /* TBChatBottomView.h */,
+				62EC9A1D254FD4EC00997836 /* TBChatBottomView.m */,
+				6264BBA125539529005C897C /* TBChatMsgPopMenu.h */,
+				6264BBA225539529005C897C /* TBChatMsgPopMenu.m */,
+				62FCCC5C2553D4B0001740FE /* TBChatMsgPreview.h */,
+				62FCCC5D2553D4B0001740FE /* TBChatMsgPreview.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		62EC9A35254FF29000997836 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				62EC9A28254FE64900997836 /* TBSendMessageModel.h */,
+				62EC9A29254FE64900997836 /* TBSendMessageModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		62EC9A3C254FF2DC00997836 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				62EC9A702551537A00997836 /* TBSingleTxtCell.h */,
+				62EC9A712551537A00997836 /* TBSingleTxtCell.m */,
+				62EC9A36254FF2D500997836 /* TBChatBaseCell.h */,
+				62EC9A37254FF2D500997836 /* TBChatBaseCell.m */,
+				62EC9A40254FF31100997836 /* TBChatTextCell.h */,
+				62EC9A41254FF31100997836 /* TBChatTextCell.m */,
+				62EC9AE525528ABB00997836 /* TBChatIMageCell.h */,
+				62EC9AE625528ABB00997836 /* TBChatIMageCell.m */,
+				62FCCC562553CDB2001740FE /* TBChatVideoCell.h */,
+				62FCCC572553CDB2001740FE /* TBChatVideoCell.m */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		62EC9A7F255249BA00997836 /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				62EC9A9525524A5300997836 /* Emoji */,
+			);
+			path = Tool;
+			sourceTree = "<group>";
+		};
+		62EC9A9525524A5300997836 /* Emoji */ = {
+			isa = PBXGroup;
+			children = (
+				62EC9A8F25524A4B00997836 /* TBCustomEmojiModel.h */,
+				62EC9A9025524A4B00997836 /* TBCustomEmojiModel.m */,
+				62EC9AB625524EA400997836 /* TBEmojiKeyboardView.h */,
+				62EC9AB725524EA400997836 /* TBEmojiKeyboardView.m */,
+				62EC9A83255249DE00997836 /* TBEmojiHelp.h */,
+				62EC9A84255249DF00997836 /* TBEmojiHelp.m */,
+				62EC9A9A25524A7700997836 /* RichTextAttachment.h */,
+				62EC9A9B25524A7700997836 /* RichTextAttachment.m */,
+				62EC9A9925524A7700997836 /* UITextView+Rich.h */,
+				62EC9A9C25524A7700997836 /* UITextView+Rich.m */,
+			);
+			path = Emoji;
+			sourceTree = "<group>";
+		};
+		6A9C898A3200E094BF6DB143 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				29F2B1E0E9074E86A4EB356F /* Pods-SIMDemo.debug.xcconfig */,
+				E465EB20F64564B3B9EB3ED5 /* Pods-SIMDemo.release.xcconfig */,
+				E2CB813A05517C8A72136D4A /* Pods-SIMDemo-SIMDemoUITests.debug.xcconfig */,
+				73BF244536E3BC21F3D52D04 /* Pods-SIMDemo-SIMDemoUITests.release.xcconfig */,
+				7BBE219EEC867E525398EA23 /* Pods-SIMDemoTests.debug.xcconfig */,
+				F1C9F4FBCFD115D75ECC147B /* Pods-SIMDemoTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		6E49D97725416F3B00010564 = {
+			isa = PBXGroup;
+			children = (
+				6E49D98225416F3B00010564 /* SIMDemo */,
+				6E49D99E25416F3C00010564 /* SIMDemoTests */,
+				6E49D9A925416F3C00010564 /* SIMDemoUITests */,
+				6E49D98125416F3B00010564 /* Products */,
+				6A9C898A3200E094BF6DB143 /* Pods */,
+				E3FA8FC6D8BF0C1C7F9CD405 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		6E49D98125416F3B00010564 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6E49D98025416F3B00010564 /* SIMDemo.app */,
+				6E49D99B25416F3C00010564 /* SIMDemoTests.xctest */,
+				6E49D9A625416F3C00010564 /* SIMDemoUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6E49D98225416F3B00010564 /* SIMDemo */ = {
+			isa = PBXGroup;
+			children = (
+				62465F2A2599CD0B00437B8A /* TBIM.framework */,
+				6E49D98325416F3B00010564 /* AppDelegate.h */,
+				6E49D98425416F3B00010564 /* AppDelegate.m */,
+				624C9F7F254FA5D40011D4C5 /* TBPreLoginVC.h */,
+				624C9F80254FA5D40011D4C5 /* TBPreLoginVC.m */,
+				62EC9A7F255249BA00997836 /* Tool */,
+				6E884292254BB9AA007103C8 /* Network */,
+				6E88425625493E56007103C8 /* Category */,
+				6E8841D025483D6A007103C8 /* Module */,
+				6E8841C925483D24007103C8 /* Tab */,
+				6E49D98C25416F3B00010564 /* Main.storyboard */,
+				6E49D98F25416F3B00010564 /* Assets.xcassets */,
+				6E49D99125416F3B00010564 /* LaunchScreen.storyboard */,
+				6E49D99425416F3B00010564 /* Info.plist */,
+				6E49D99525416F3B00010564 /* main.m */,
+				6E8841AA2548250A007103C8 /* IMChat.storyboard */,
+				6E88420F2549032D007103C8 /* SIMDemo.pch */,
+				624C9FCB254FD21E0011D4C5 /* Helper */,
+			);
+			path = SIMDemo;
+			sourceTree = "<group>";
+		};
+		6E49D99E25416F3C00010564 /* SIMDemoTests */ = {
+			isa = PBXGroup;
+			children = (
+				6E49D99F25416F3C00010564 /* SIMDemoTests.m */,
+				6E49D9A125416F3C00010564 /* Info.plist */,
+			);
+			path = SIMDemoTests;
+			sourceTree = "<group>";
+		};
+		6E49D9A925416F3C00010564 /* SIMDemoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				6E49D9AA25416F3C00010564 /* SIMDemoUITests.m */,
+				6E49D9AC25416F3C00010564 /* Info.plist */,
+			);
+			path = SIMDemoUITests;
+			sourceTree = "<group>";
+		};
+		6E8841C925483D24007103C8 /* Tab */ = {
+			isa = PBXGroup;
+			children = (
+				6E8841CA25483D3B007103C8 /* TBMainTabBarController.h */,
+				6E8841CB25483D3B007103C8 /* TBMainTabBarController.m */,
+			);
+			path = Tab;
+			sourceTree = "<group>";
+		};
+		6E8841D025483D6A007103C8 /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				6E884282254BA2F1007103C8 /* Group */,
+				6E8841D225483D9E007103C8 /* Chat */,
+				6E8841D125483D96007103C8 /* Session */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		6E8841D125483D96007103C8 /* Session */ = {
+			isa = PBXGroup;
+			children = (
+				6E8841D325483DC4007103C8 /* TBSessionController.h */,
+				6E8841D425483DC4007103C8 /* TBSessionController.m */,
+				6E8841FB254845A3007103C8 /* TBSessionCell.h */,
+				6E8841FC254845A3007103C8 /* TBSessionCell.m */,
+				6E884267254949D1007103C8 /* TBSessionManager.h */,
+				6E884268254949D1007103C8 /* TBSessionManager.m */,
+			);
+			path = Session;
+			sourceTree = "<group>";
+		};
+		6E8841D225483D9E007103C8 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				62EC9A16254FD4C600997836 /* TBChatVC.h */,
+				62EC9A17254FD4C600997836 /* TBChatVC.m */,
+				62EC9A4C255001DB00997836 /* TBChatMsgManager.h */,
+				62EC9A4D255001DB00997836 /* TBChatMsgManager.m */,
+				6E16CFFF254F9477002DAB09 /* TBChatManager.h */,
+				6E16D000254F9477002DAB09 /* TBChatManager.m */,
+				62EC9A3C254FF2DC00997836 /* Cell */,
+				62EC9A31254FF28400997836 /* View */,
+				62EC9A35254FF29000997836 /* Model */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
+		6E88425625493E56007103C8 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				6E8842612549452A007103C8 /* NSDate+Show.h */,
+				6E8842622549452A007103C8 /* NSDate+Show.m */,
+				6E88425725493E6A007103C8 /* UIColor+TB.h */,
+				6E88425825493E6B007103C8 /* UIColor+TB.m */,
+				62EC9A46254FFEA700997836 /* NSString+Addtions.h */,
+				62EC9A47254FFEA700997836 /* NSString+Addtions.m */,
+				6E16D00B254FEC8F002DAB09 /* NSArray+SIMMessage.h */,
+				6E16D00C254FEC8F002DAB09 /* NSArray+SIMMessage.m */,
+				62EC9A89255249EE00997836 /* NSString+Rich.h */,
+				62EC9A8A255249EE00997836 /* NSString+Rich.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		6E884282254BA2F1007103C8 /* Group */ = {
+			isa = PBXGroup;
+			children = (
+				6E884283254BA306007103C8 /* TBGroupManager.h */,
+				6E884284254BA306007103C8 /* TBGroupManager.m */,
+			);
+			path = Group;
+			sourceTree = "<group>";
+		};
+		6E884292254BB9AA007103C8 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				6E88428C254BB9A5007103C8 /* TBNetReqManager.h */,
+				6E88428D254BB9A5007103C8 /* TBNetReqManager.m */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		E3FA8FC6D8BF0C1C7F9CD405 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D6DC91A88F4C119BBE211D70 /* Pods_SIMDemo.framework */,
+				DE05C2218513F6F15E7EEC98 /* Pods_SIMDemo_SIMDemoUITests.framework */,
+				D4362A122E353D8D8AB880C0 /* Pods_SIMDemoTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6E49D97F25416F3B00010564 /* SIMDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6E49D9AF25416F3C00010564 /* Build configuration list for PBXNativeTarget "SIMDemo" */;
+			buildPhases = (
+				19AA7F181C3F6042091A7D8C /* [CP] Check Pods Manifest.lock */,
+				6E49D97C25416F3B00010564 /* Sources */,
+				6E49D97D25416F3B00010564 /* Frameworks */,
+				6E49D97E25416F3B00010564 /* Resources */,
+				F94F0C2F4185A8C51711D0FC /* [CP] Embed Pods Frameworks */,
+				62465EDE2599C58900437B8A /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SIMDemo;
+			productName = SIMDemo;
+			productReference = 6E49D98025416F3B00010564 /* SIMDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		6E49D99A25416F3C00010564 /* SIMDemoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6E49D9B225416F3C00010564 /* Build configuration list for PBXNativeTarget "SIMDemoTests" */;
+			buildPhases = (
+				81AB18881622FF16FEF87140 /* [CP] Check Pods Manifest.lock */,
+				6E49D99725416F3C00010564 /* Sources */,
+				6E49D99825416F3C00010564 /* Frameworks */,
+				6E49D99925416F3C00010564 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6E49D99D25416F3C00010564 /* PBXTargetDependency */,
+			);
+			name = SIMDemoTests;
+			productName = SIMDemoTests;
+			productReference = 6E49D99B25416F3C00010564 /* SIMDemoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		6E49D9A525416F3C00010564 /* SIMDemoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6E49D9B525416F3C00010564 /* Build configuration list for PBXNativeTarget "SIMDemoUITests" */;
+			buildPhases = (
+				1D8B3839E07241507108637E /* [CP] Check Pods Manifest.lock */,
+				6E49D9A225416F3C00010564 /* Sources */,
+				6E49D9A325416F3C00010564 /* Frameworks */,
+				6E49D9A425416F3C00010564 /* Resources */,
+				89D31796AC1B79900A82C541 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6E49D9A825416F3C00010564 /* PBXTargetDependency */,
+			);
+			name = SIMDemoUITests;
+			productName = SIMDemoUITests;
+			productReference = 6E49D9A625416F3C00010564 /* SIMDemoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6E49D97825416F3B00010564 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1200;
+				TargetAttributes = {
+					6E49D97F25416F3B00010564 = {
+						CreatedOnToolsVersion = 12.0;
+					};
+					6E49D99A25416F3C00010564 = {
+						CreatedOnToolsVersion = 12.0;
+						TestTargetID = 6E49D97F25416F3B00010564;
+					};
+					6E49D9A525416F3C00010564 = {
+						CreatedOnToolsVersion = 12.0;
+						TestTargetID = 6E49D97F25416F3B00010564;
+					};
+				};
+			};
+			buildConfigurationList = 6E49D97B25416F3B00010564 /* Build configuration list for PBXProject "SIMDemo" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 6E49D97725416F3B00010564;
+			productRefGroup = 6E49D98125416F3B00010564 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6E49D97F25416F3B00010564 /* SIMDemo */,
+				6E49D99A25416F3C00010564 /* SIMDemoTests */,
+				6E49D9A525416F3C00010564 /* SIMDemoUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6E49D97E25416F3B00010564 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6E49D99325416F3B00010564 /* LaunchScreen.storyboard in Resources */,
+				6E49D99025416F3B00010564 /* Assets.xcassets in Resources */,
+				6E8841AB2548250A007103C8 /* IMChat.storyboard in Resources */,
+				6E49D98E25416F3B00010564 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6E49D99925416F3C00010564 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6E49D9A425416F3C00010564 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		19AA7F181C3F6042091A7D8C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SIMDemo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1D8B3839E07241507108637E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SIMDemo-SIMDemoUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		81AB18881622FF16FEF87140 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SIMDemoTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		89D31796AC1B79900A82C541 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SIMDemo-SIMDemoUITests/Pods-SIMDemo-SIMDemoUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SIMDemo-SIMDemoUITests/Pods-SIMDemo-SIMDemoUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SIMDemo-SIMDemoUITests/Pods-SIMDemo-SIMDemoUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F94F0C2F4185A8C51711D0FC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SIMDemo/Pods-SIMDemo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SIMDemo/Pods-SIMDemo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SIMDemo/Pods-SIMDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6E49D97C25416F3B00010564 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				62EC9A9E25524A7800997836 /* UITextView+Rich.m in Sources */,
+				6E8841D525483DC4007103C8 /* TBSessionController.m in Sources */,
+				62EC9A85255249DF00997836 /* TBEmojiHelp.m in Sources */,
+				62EC9A38254FF2D500997836 /* TBChatBaseCell.m in Sources */,
+				62EC9A8B255249EE00997836 /* NSString+Rich.m in Sources */,
+				62EC9A24254FDEC200997836 /* AppUnitParam.m in Sources */,
+				62FCCC5E2553D4B0001740FE /* TBChatMsgPreview.m in Sources */,
+				62EC9A2A254FE64900997836 /* TBSendMessageModel.m in Sources */,
+				62EC9A6C25513C6E00997836 /* MFToast.m in Sources */,
+				62EC9A42254FF31100997836 /* TBChatTextCell.m in Sources */,
+				6E8841CC25483D3B007103C8 /* TBMainTabBarController.m in Sources */,
+				62EC9A48254FFEA700997836 /* NSString+Addtions.m in Sources */,
+				62EC9A1E254FD4EC00997836 /* TBChatBottomView.m in Sources */,
+				62EC9AE725528ABB00997836 /* TBChatIMageCell.m in Sources */,
+				62EC9AB825524EA400997836 /* TBEmojiKeyboardView.m in Sources */,
+				6264BBA325539529005C897C /* TBChatMsgPopMenu.m in Sources */,
+				6E8841FD254845A3007103C8 /* TBSessionCell.m in Sources */,
+				62EC9A9D25524A7800997836 /* RichTextAttachment.m in Sources */,
+				6E49D98525416F3B00010564 /* AppDelegate.m in Sources */,
+				6E88425925493E6B007103C8 /* UIColor+TB.m in Sources */,
+				624C9F81254FA5D40011D4C5 /* TBPreLoginVC.m in Sources */,
+				62EC9A18254FD4C600997836 /* TBChatVC.m in Sources */,
+				624C9FC7254FD2150011D4C5 /* AppMacro.h in Sources */,
+				62EC9A9125524A4B00997836 /* TBCustomEmojiModel.m in Sources */,
+				6E8842632549452A007103C8 /* NSDate+Show.m in Sources */,
+				62FCCC582553CDB2001740FE /* TBChatVideoCell.m in Sources */,
+				6E88428E254BB9A5007103C8 /* TBNetReqManager.m in Sources */,
+				6E16D00D254FEC8F002DAB09 /* NSArray+SIMMessage.m in Sources */,
+				6E16D001254F9477002DAB09 /* TBChatManager.m in Sources */,
+				6E49D99625416F3B00010564 /* main.m in Sources */,
+				62EC9A722551537A00997836 /* TBSingleTxtCell.m in Sources */,
+				6E884285254BA306007103C8 /* TBGroupManager.m in Sources */,
+				6E884269254949D1007103C8 /* TBSessionManager.m in Sources */,
+				62EC9A4E255001DB00997836 /* TBChatMsgManager.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6E49D99725416F3C00010564 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6E49D9A025416F3C00010564 /* SIMDemoTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6E49D9A225416F3C00010564 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6E49D9AB25416F3C00010564 /* SIMDemoUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		6E49D99D25416F3C00010564 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6E49D97F25416F3B00010564 /* SIMDemo */;
+			targetProxy = 6E49D99C25416F3C00010564 /* PBXContainerItemProxy */;
+		};
+		6E49D9A825416F3C00010564 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6E49D97F25416F3B00010564 /* SIMDemo */;
+			targetProxy = 6E49D9A725416F3C00010564 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		6E49D98C25416F3B00010564 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6E49D98D25416F3B00010564 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		6E49D99125416F3B00010564 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6E49D99225416F3B00010564 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		6E49D9AD25416F3C00010564 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		6E49D9AE25416F3C00010564 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6E49D9B025416F3C00010564 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 29F2B1E0E9074E86A4EB356F /* Pods-SIMDemo.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 2;
+				DEVELOPMENT_TEAM = V7S7ZQC6QG;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SIMDemo/SIMFramework",
+					"$(PROJECT_DIR)/SIMDemo",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/SIMDemo/SIMDemo.pch";
+				INFOPLIST_FILE = SIMDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sammbo.imsdk;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = development_sammbo_20211223;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WARNING_CFLAGS = "-Wshorten-64-to-32";
+			};
+			name = Debug;
+		};
+		6E49D9B125416F3C00010564 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E465EB20F64564B3B9EB3ED5 /* Pods-SIMDemo.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 2;
+				DEVELOPMENT_TEAM = V7S7ZQC6QG;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SIMDemo/SIMFramework",
+					"$(PROJECT_DIR)/SIMDemo",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/SIMDemo/SIMDemo.pch";
+				INFOPLIST_FILE = SIMDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sammbo.imsdk;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = Distribution_sammbo_20211223;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WARNING_CFLAGS = "-Wshorten-64-to-32";
+			};
+			name = Release;
+		};
+		6E49D9B325416F3C00010564 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7BBE219EEC867E525398EA23 /* Pods-SIMDemoTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = SIMDemoTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.thunbu.SIMDemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SIMDemo.app/SIMDemo";
+			};
+			name = Debug;
+		};
+		6E49D9B425416F3C00010564 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F1C9F4FBCFD115D75ECC147B /* Pods-SIMDemoTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = SIMDemoTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.thunbu.SIMDemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SIMDemo.app/SIMDemo";
+			};
+			name = Release;
+		};
+		6E49D9B625416F3C00010564 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E2CB813A05517C8A72136D4A /* Pods-SIMDemo-SIMDemoUITests.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = SIMDemoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.thunbu.SIMDemoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = SIMDemo;
+			};
+			name = Debug;
+		};
+		6E49D9B725416F3C00010564 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 73BF244536E3BC21F3D52D04 /* Pods-SIMDemo-SIMDemoUITests.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = SIMDemoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.thunbu.SIMDemoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = SIMDemo;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6E49D97B25416F3B00010564 /* Build configuration list for PBXProject "SIMDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6E49D9AD25416F3C00010564 /* Debug */,
+				6E49D9AE25416F3C00010564 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6E49D9AF25416F3C00010564 /* Build configuration list for PBXNativeTarget "SIMDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6E49D9B025416F3C00010564 /* Debug */,
+				6E49D9B125416F3C00010564 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6E49D9B225416F3C00010564 /* Build configuration list for PBXNativeTarget "SIMDemoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6E49D9B325416F3C00010564 /* Debug */,
+				6E49D9B425416F3C00010564 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6E49D9B525416F3C00010564 /* Build configuration list for PBXNativeTarget "SIMDemoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6E49D9B625416F3C00010564 /* Debug */,
+				6E49D9B725416F3C00010564 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6E49D97825416F3B00010564 /* Project object */;
+}

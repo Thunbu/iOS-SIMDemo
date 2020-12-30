@@ -1,0 +1,36 @@
+{
+  "name": "SIMSDK",
+  "version": "0.0.9",
+  "summary": "功能最强大的云通信服务SIMSDK",
+  "description": "目前最好的云通信服务SIMSDK，此版本只提供framework，不提供源码",
+  "homepage": "http://10.86.78.213:8000/ios_module_group/SIMSDK",
+  "authors": {
+    "Jonrencxr": "Xuanren.Chang@geely.com"
+  },
+  "platforms": {
+    "ios": "9.0"
+  },
+  "source": {
+    "git": "http://10.86.78.213:8000/ios_module_group/SIMSDK.git",
+    "tag": "0.0.9"
+  },
+  "requires_arc": true,
+  "source_files": "SIMSDK/Classes/**/*",
+  "dependencies": {
+    "AFNetworking": [
+      "4.0.1"
+    ],
+    "YYModel": [
+
+    ],
+    "SocketRocket": [
+
+    ],
+    "ReactiveCocoa": [
+      "~> 2.5"
+    ],
+    "RealReachability": [
+      "~> 1.3.0"
+    ]
+  }
+}
