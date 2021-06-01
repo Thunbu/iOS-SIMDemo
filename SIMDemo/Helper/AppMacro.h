@@ -2,7 +2,7 @@
 //  AppMacro.m
 //  SIMDemo
 //
-//  Created by xiaobing on 2020/11/2.
+//  on 2020/11/2.
 //
 
 #import <Foundation/Foundation.h>
@@ -11,9 +11,9 @@
 #define UIScreenBounds ([UIScreen mainScreen].bounds)
 #define UIScreenWidth ([UIScreen mainScreen].bounds.size.width)
 #define UIScreenHeight ([UIScreen mainScreen].bounds.size.height)
-#define StatusHeight ([AppUnitParam isIphoneXSeries] ? 44 : 20)
-#define StatusNavBarHeight ([AppUnitParam isIphoneXSeries] ? 88 : 64)
-#define BottomSafeHeight ([AppUnitParam isIphoneXSeries] ? 34 : 0)
+#define StatusHeight ([AppUnitParamDemo isIphoneXSeries] ? 44 : 20)
+#define StatusNavBarHeight ([AppUnitParamDemo isIphoneXSeries] ? 88 : 64)
+#define BottomSafeHeight ([AppUnitParamDemo isIphoneXSeries] ? 34 : 0)
 
 //FONT
 #define Regular(fontSize) [UIFont fontWithName:@"PingFangSC-Regular" size:fontSize]

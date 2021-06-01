@@ -2,15 +2,16 @@
 //  TBChatBaseCell.m
 //  SIMDemo
 //
-//  Created by xiaobing on 2020/11/2.
+//  on 2020/11/2.
 //
 
 #import "TBChatBaseCell.h"
+#import "UIImageView+TBWebImage.h"
 
 @interface TBChatBaseCell()
 
 @property(nonatomic, strong)UIImageView *headerImg;
-@property(nonatomic, strong)UIImageView *bubbleImg;
+
 @end
 
 @implementation TBChatBaseCell
@@ -40,10 +41,13 @@
 - (void)configHeaderImg:(SIMSession *)session chatMessage:(SIMMessage *)message{
     if ([message.sender isEqualToString:[[TBChatManager sharedInstanced] currentUserId]]){
         self.headerImg.frame = CGRectMake(UIScreenWidth-40-12, 5, 40, 40);
+        [self.headerImg tb_setImageWithUserId:[[TBChatManager sharedInstanced] currentUserId] placeholder:[UIImage imageNamed:@"Friend_DefaultAvatar"]];
     }
     else {
         self.headerImg.frame = CGRectMake(12, 5, 40, 40);
+        [self.headerImg tb_setImageWithUserId:message.sender placeholder:[UIImage imageNamed:@"Friend_DefaultAvatar"]];
     }
+    
     [self configBubble:session chatMessage:message];
 }
 // 如果不需要气泡 子类只需要重写这个方法

@@ -2,7 +2,7 @@
 //  TBSessionCell.m
 //  SIMDemo
 //
-//  Created by changxuanren on 2020/10/27.
+//  on 2020/10/27.
 //
 
 #import "TBSessionCell.h"
@@ -41,6 +41,9 @@
     }
     else if (msg.msgType == SIMMsgType_VIDEO) {
         msgText = @"视频";
+    }
+    else if (msg.msgType == SIMMsgType_FILE){
+        msgText = @"文件";
     }
     
     if (session.sessionType == SIMSessionType_GROUP && ![msg.sender isEqualToString:[SIMManager sharedInstance].loginParam.identifier]) {

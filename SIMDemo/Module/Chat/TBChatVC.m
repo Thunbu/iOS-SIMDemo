@@ -2,7 +2,7 @@
 //  TBChatVC.m
 //  SIMDemo
 //
-//  Created by xiaobing on 2020/11/2.
+//  on 2020/11/2.
 //
 
 #import "TBChatVC.h"
@@ -15,8 +15,12 @@
 #import "TBChatMsgPopMenu.h"
 #import "TBChatVideoCell.h"
 #import "TBChatMsgPreview.h"
+#import "TBChatFileCell.h"
+#import "TBWebView.h"
 #import <AVKit/AVKit.h>
 #import <MJRefresh/MJRefresh.h>
+
+
 
 @interface TBChatVC ()<UITableViewDelegate,UITableViewDataSource,TBIMChatMessageDelegate>
 
@@ -24,6 +28,7 @@
 @property(nonatomic, strong)UITableView *chatTable;
 @property(nonatomic, strong)TBChatMsgManager *chatManager;
 @property(nonatomic, strong)NSMutableArray <SIMMessage *>*dataSource;
+@property(nonatomic, strong)SIMMessage *oldestMessage; // 最老的那条消息 用于判断消息是否拉取完
 @end
 
 @implementation TBChatVC
@@ -46,6 +51,7 @@
     [self initUI];
     [self reloadData:nil];
 }
+
 // 注册消息监听 注意注意⚠️⚠️⚠️只有这里监听注册过消息接收才能响应⚠️⚠️⚠️
 - (void)registerMessageObserver{
     [[TBChatManager sharedInstanced] registerDelegate:self];
@@ -66,7 +72,9 @@
 - (void)initUI{
     self.view.backgroundColor = [UIColor whiteColor];
     self.title = @"聊天";
+    @weakify(self);
     self.chatTable.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        @strongify(self);
         SIMMessage *message = self.dataSource.firstObject;
         [self reloadData:message.packetId];
     }];
@@ -76,7 +84,6 @@
     
     [self.bottomView configBottomActions:@[@"im_input_view_emoji",@"im_input_view_img",@"im_input_view_more"] highImgs:@[@"im_input_view_emoji_selected",@"im_input_view_img_selected",@"im_input_view_more_selected"]];
     
-    @weakify(self);
     self.bottomView.sendMessage = ^(TBSendMessageModel * _Nonnull model) {
         @strongify(self);
         if (model.messageType == SIMMsgType_TXT){
@@ -87,6 +94,9 @@
         }
         else if (model.messageType == SIMMsgType_VIDEO){
             [self sendVideoMessage:model];
+        }
+        else if (model.messageType == SIMMsgType_FILE){
+            [self sendFileMessage:model];
         }
     };
     self.bottomView.frameChange = ^(CGFloat bh) {
@@ -104,15 +114,21 @@
             [MFToast showToast:@"消息拉取失败"];
             return;
         }
+        SIMMessage *tempMsg = nil;
         if (self.dataSource.count == 0){
+            tempMsg = msgs.firstObject;
             [self.dataSource addObjectsFromArray:msgs];
         }
         else {
             NSMutableArray *tempArr = [[NSMutableArray alloc]initWithCapacity:0];
-            [tempArr addObjectsFromArray:msgs];
-            [tempArr addObjectsFromArray:self.dataSource];
-            self.dataSource = tempArr;
+            tempMsg = msgs.firstObject;
+            if (![self.oldestMessage.packetId isEqualToString:tempMsg.packetId]){
+                [tempArr addObjectsFromArray:msgs];
+                [tempArr addObjectsFromArray:self.dataSource];
+                self.dataSource = tempArr;
+            }
         }
+        self.oldestMessage = tempMsg;
         if (self.dataSource.count == 0){
             return;
         }
@@ -140,7 +156,20 @@
 }
 // 发送图片消息 这里只是为了演示 链接固定 但是 真实使用需要 换成真正上传的图片的url
 - (void)sendImageMessage:(TBSendMessageModel *)model{
-    [[TBChatManager sharedInstanced] sendImageMessageTo:self.currentSeeion.sessionId url:@"https://bossfs.sammbo.com/0/1/head/yellowcat.png" isHD:YES completion:^(SIMMessage * _Nonnull msg, SIMError * _Nonnull error) {
+//    SIMImageElem *elem = [[SIMImageElem alloc]init];
+//    elem.imageData = model.imageData;
+//    elem.upImage = model.upImage;
+//    SIMMessage *msg = [[SIMMessage alloc]init];
+//    msg.receiver = self.currentSeeion.sessionId;
+//    msg.elem = elem;
+//    [[SIMMessageManager sharedInstance] sendMessage:msg uprogress:^(OSSPutObjectRequest * _Nonnull putReq, CGFloat current, CGFloat total) {
+//        
+//    } succ:^(id  _Nonnull data) {
+//        
+//    } fail:^(SIMError * _Nonnull error) {
+//        
+//    }];
+    [[TBChatManager sharedInstanced] sendImageMessageTo:self.currentSeeion.sessionId url:model.urlPath isHD:YES completion:^(SIMMessage * _Nonnull msg, SIMError * _Nonnull error) {
         if (error){
             [MFToast showToast:@"消息发送失败"];
             return;
@@ -152,9 +181,20 @@
 }
 // 发送视频消息
 - (void)sendVideoMessage:(TBSendMessageModel *)model{
-    NSString *videoPath = @"https://bossfs.sammbo.com/2/1/260392/2020/11/1604556149616.MOV";
-    NSString *coverPath = @"https://bossfs.sammbo.com/2/1/260392/2020/11/1604556149509.jpg";
+    NSString *videoPath = model.videPath;
+    NSString *coverPath = model.coverPath;
     [[TBChatManager sharedInstanced] sendVideoMessageTo:self.currentSeeion.sessionId url:videoPath coverUrl:coverPath completion:^(SIMMessage * _Nonnull msg, SIMError * _Nonnull error) {
+        if (error){
+            [MFToast showToast:@"消息发送失败"];
+            return;
+        }
+        [self.dataSource addObject:msg];
+        [self.chatTable reloadData];
+        [self scrollToBottom];
+    }];
+}
+- (void)sendFileMessage:(TBSendMessageModel *)model{
+    [[TBChatManager sharedInstanced] sendFileMessageTo:self.currentSeeion.sessionId msgModel:model completion:^(SIMMessage * _Nonnull msg, SIMError * _Nonnull error) {
         if (error){
             [MFToast showToast:@"消息发送失败"];
             return;
@@ -192,7 +232,7 @@
             
             [(TBChatTextCell *)cell configChatTextMessage:self.currentSeeion chatMessage:message chatManager:self.chatManager];
         }
-        else if (message.msgType == SIMMsgType_GROUP_CREATE){
+        else if (message.msgType == SIMMsgType_GROUP_CREATE || message.msgType == SIMMsgType_GROUP_MODIFY_GROUPINFO){
             NSString *iden = @"single_text_cell";
             TBSingleTxtCell *singleCell = [tableView dequeueReusableCellWithIdentifier:iden];
             if (!singleCell){
@@ -218,6 +258,14 @@
             }
             [(TBChatVideoCell *)cell configChatVideoMessage:self.currentSeeion chatMessage:message chatManager:self.chatManager];
         }
+        else if (message.msgType == SIMMsgType_FILE){
+            NSString *iden = @"file_cell";
+            cell = [tableView dequeueReusableCellWithIdentifier:iden];
+            if (!cell){
+                cell = [[TBChatFileCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:iden];
+            }
+            [(TBChatFileCell *)cell configChatVideoMessage:self.currentSeeion chatMessage:message chatManager:self.chatManager];
+        }
         else {
             cell = [[TBChatBaseCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
         }
@@ -240,11 +288,13 @@
                 }
                 else if(message.msgType == SIMMsgType_VIDEO){
                     SIMVideoElem *elem = (SIMVideoElem *)message.elem;
-                    AVPlayerViewController *player = [[AVPlayerViewController alloc]init];
-                    player.player = [[AVPlayer alloc]initWithURL:[NSURL URLWithString:elem.videoUrl]];
-                    [self.navigationController presentViewController:player animated:YES completion:^{
-
-                    }];
+                    TBWebView *webView = [[TBWebView alloc]initWithTitle:@"视频" showUrl:elem.videoUrl];
+                    [self.navigationController pushViewController:webView animated:YES];
+                }
+                else if (message.msgType == SIMMsgType_FILE){
+                    SIMFileElem *elem = (SIMFileElem *)message.elem;
+                    TBWebView *webView = [[TBWebView alloc]initWithTitle:@"文件" showUrl:[elem.downUrl stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+                    [self.navigationController pushViewController:webView animated:YES];
                 }
             }
             else if (type == TBChatGestureTwice){

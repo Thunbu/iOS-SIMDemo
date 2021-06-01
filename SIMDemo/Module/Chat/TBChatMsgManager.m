@@ -2,7 +2,7 @@
 //  TBChatManager.m
 //  SIMDemo
 //
-//  Created by xiaobing on 2020/11/2.
+//  on 2020/11/2.
 //
 
 #import "TBChatMsgManager.h"
@@ -42,6 +42,9 @@
         }
         CGFloat imageHeight = videoElem.coverHeight/proportion;
         return imageHeight;
+    }
+    if (message.msgType == SIMMsgType_FILE){
+        return 60;
     }
     return 0.0;
 }

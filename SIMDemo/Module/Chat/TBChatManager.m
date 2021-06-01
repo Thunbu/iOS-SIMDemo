@@ -2,7 +2,7 @@
 //  TBChatManager.m
 //  SIMDemo
 //
-//  Created by changxuanren on 2020/11/2.
+//  on 2020/11/2.
 //
 
 #import "TBChatManager.h"
@@ -10,23 +10,32 @@
 #import <objc/message.h>
 #import "TBSessionManager.h"
 #import "NSArray+SIMMessage.h"
+#import "TBUploadManager.h"
+#import "TBSendMessageModel.h"
 
 @interface TBIMChatMessageDelegateNode : NSObject
+
 @property (nonatomic,weak,readonly)id delegate;
+
 @end
 
 @implementation TBIMChatMessageDelegateNode
+
 -(id)initWithDelegate:(id)delegate {
     self = [super init];
     _delegate = delegate;
     return self;
 }
+
 @end
 
 
 @interface TBChatManager ()
+
+
 @property(nonatomic, copy)NSString *currentUser;
 @property (nonatomic, strong) NSMutableArray<TBIMChatMessageDelegate> *delegates;
+
 @end
 
 
@@ -55,6 +64,35 @@
             [self.delegates removeObject:node];
             break;
         }
+    }
+}
+#pragma mark - SIMListener
+
+#pragma mark -消息
+/**
+ 新消息回调通知
+
+ @param msg SIMMessage 类型
+ */
+- (void)onReceivedMessage:(SIMMessage *)msg {
+    NSLog(@"SDK 收到消息：%@", [msg yy_modelToJSONObject]);
+    
+    //通知到会话列表
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"onReceivedMessage" object:msg];
+    
+    //通知到会话
+    [self receiveMessage:msg];
+}
+// 被挤下线消息
+- (void)onReceiveOfflineMessage:(SIMOfflineMessage *)offlineMsg {
+    switch (offlineMsg.type) {
+        case SIMOfflineType_Passive:
+            [[SIMManager sharedInstance] forceLogout];
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"TBEliminateLogin" object:nil];
+            break;
+            
+        default:
+            break;
     }
 }
 // 消息接收总入口
@@ -119,13 +157,7 @@
     SIMMessage *msg = [[SIMMessage alloc] initWithReceiver:to chatType:[[TBSessionManager sharedInstanced] getSIMSessionTypeOfSessionId:to]];
     [msg setElem:elem];
 
-    [[SIMMessageManager sharedInstance] sendMessage:msg succ:^(id  _Nonnull data) {
-        if (data){
-            completion((SIMMessage *)data, nil);
-        }
-    } fail:^(SIMError * _Nonnull error) {
-        completion(nil, error);
-    }];
+    [self realSendMessage:msg complete:completion];
 }
 
 //注意：发送图片和视频消息，宽高和大小等参数需要业务方传递真实值，以保证消息的可靠性
@@ -165,13 +197,7 @@
     SIMMessage *msg = [[SIMMessage alloc] initWithReceiver:to chatType:[[TBSessionManager sharedInstanced] getSIMSessionTypeOfSessionId:to]];
     [msg setElem:elem];
 
-    [[SIMMessageManager sharedInstance] sendMessage:msg succ:^(id  _Nonnull data) {
-        if (data){
-            completion((SIMMessage *)data, nil);
-        }
-    } fail:^(SIMError * _Nonnull error) {
-        completion(nil, error);
-    }];
+    [self realSendMessage:msg complete:completion];
 }
 
 - (void)sendVideoMessageTo:(NSString *)to url:(NSString *)url coverUrl:(NSString *)coverUrl completion:(void(^)(SIMMessage *, SIMError *error))completion{
@@ -190,14 +216,37 @@
     SIMMessage *msg = [[SIMMessage alloc] initWithReceiver:to chatType:[[TBSessionManager sharedInstanced] getSIMSessionTypeOfSessionId:to]];
     [msg setElem:elem];
 
-    [[SIMMessageManager sharedInstance] sendMessage:msg succ:^(id  _Nonnull data) {
+    [self realSendMessage:msg complete:completion];
+}
+
+- (void)sendFileMessageTo:(NSString *)to msgModel:(TBSendMessageModel *)model completion:(void(^)(SIMMessage *, SIMError *error))completion{
+    if (!model){
+        return;
+    }
+    SIMFileElem *elem = [SIMFileElem new];
+    elem.downUrl = model.fileRemoteUrl;
+    elem.size = model.fileSize;
+    elem.filename = model.displayName;
+    elem.format = [model.fileRemoteUrl fileFormat];
+    SIMMessage *msg = [[SIMMessage alloc] initWithReceiver:to chatType:[[TBSessionManager sharedInstanced] getSIMSessionTypeOfSessionId:to]];
+    [msg setElem:elem];
+
+    [self realSendMessage:msg complete:completion];
+}
+
+- (void)realSendMessage:(SIMMessage *)msg complete:(void(^)(SIMMessage *, SIMError *error))completion{
+    [[SIMMessageManager sharedInstance] sendMessage:msg uprogress:^(OSSPutObjectRequest * _Nonnull putReq, CGFloat current, CGFloat total) {
+        
+    } succ:^(id  _Nonnull data) {
         if (data){
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"TBSendNewMessage" object:data];
             completion((SIMMessage *)data, nil);
         }
     } fail:^(SIMError * _Nonnull error) {
         completion(nil, error);
     }];
 }
+
 - (SIMVideoFormat)videoFormatForPath:(NSString *)path {
     if ([path.pathExtension localizedCaseInsensitiveContainsString:@"avi"]) {
         return SIMVideoFormat_AVI;

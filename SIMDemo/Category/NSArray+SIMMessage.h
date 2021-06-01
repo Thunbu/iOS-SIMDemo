@@ -2,7 +2,7 @@
 //  NSArray+SIMMessage.h
 //  SIMDemo
 //
-//  Created by changxuanren on 2020/11/2.
+//  on 2020/11/2.
 //
 
 #import <Foundation/Foundation.h>

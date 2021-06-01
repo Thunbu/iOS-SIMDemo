@@ -7,14 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		62465F2E2599CD1800437B8A /* TBIM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62465F2A2599CD0B00437B8A /* TBIM.framework */; };
-		62465F2F2599CD1800437B8A /* TBIM.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 62465F2A2599CD0B00437B8A /* TBIM.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		55185E33AD47336CE211528D /* Pods_SIMDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F78A2347EA1E6EB258CF82D7 /* Pods_SIMDemo.framework */; };
 		624C9F81254FA5D40011D4C5 /* TBPreLoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 624C9F80254FA5D40011D4C5 /* TBPreLoginVC.m */; };
 		624C9FC7254FD2150011D4C5 /* AppMacro.h in Sources */ = {isa = PBXBuildFile; fileRef = 624C9FC6254FD2150011D4C5 /* AppMacro.h */; };
 		6264BBA325539529005C897C /* TBChatMsgPopMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 6264BBA225539529005C897C /* TBChatMsgPopMenu.m */; };
+		626B47BC25C13DC9007808B8 /* TBChatFileCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 626B47BB25C13DC9007808B8 /* TBChatFileCell.m */; };
+		626B47C125C15C0D007808B8 /* TBWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 626B47C025C15C0D007808B8 /* TBWebView.m */; };
+		626B47E725C3DB3A007808B8 /* UIImageView+TBWebImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 626B47E625C3DB3A007808B8 /* UIImageView+TBWebImage.m */; };
+		62958C1A25B95C650066E789 /* TBBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 62958C1925B95C650066E789 /* TBBaseModel.m */; };
+		62958C2C25BA674D0066E789 /* TBAddressBookVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 62958C2B25BA674D0066E789 /* TBAddressBookVC.m */; };
+		629B590C25C02B58001CB274 /* TBUploadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 629B590B25C02B58001CB274 /* TBUploadManager.m */; };
+		629B592C25C043BD001CB274 /* TBFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 629B592B25C043BD001CB274 /* TBFileManager.m */; };
+		629B593525C0F988001CB274 /* TBChatFuncsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 629B593425C0F988001CB274 /* TBChatFuncsView.m */; };
+		629B593A25C10749001CB274 /* TBCheckDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 629B593825C10749001CB274 /* TBCheckDocument.m */; };
+		62AC053025BA6BB800AE3185 /* TBAddressCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 62AC052F25BA6BB800AE3185 /* TBAddressCell.m */; };
 		62EC9A18254FD4C600997836 /* TBChatVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 62EC9A17254FD4C600997836 /* TBChatVC.m */; };
 		62EC9A1E254FD4EC00997836 /* TBChatBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 62EC9A1D254FD4EC00997836 /* TBChatBottomView.m */; };
-		62EC9A24254FDEC200997836 /* AppUnitParam.m in Sources */ = {isa = PBXBuildFile; fileRef = 62EC9A23254FDEC200997836 /* AppUnitParam.m */; };
+		62EC9A24254FDEC200997836 /* AppUnitParamDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = 62EC9A23254FDEC200997836 /* AppUnitParamDemo.m */; };
 		62EC9A2A254FE64900997836 /* TBSendMessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 62EC9A29254FE64900997836 /* TBSendMessageModel.m */; };
 		62EC9A38254FF2D500997836 /* TBChatBaseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 62EC9A37254FF2D500997836 /* TBChatBaseCell.m */; };
 		62EC9A42254FF31100997836 /* TBChatTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 62EC9A41254FF31100997836 /* TBChatTextCell.m */; };
@@ -49,9 +58,8 @@
 		6E884269254949D1007103C8 /* TBSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E884268254949D1007103C8 /* TBSessionManager.m */; };
 		6E884285254BA306007103C8 /* TBGroupManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E884284254BA306007103C8 /* TBGroupManager.m */; };
 		6E88428E254BB9A5007103C8 /* TBNetReqManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E88428D254BB9A5007103C8 /* TBNetReqManager.m */; };
-		90048C3A2554120D590D900C /* Pods_SIMDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4362A122E353D8D8AB880C0 /* Pods_SIMDemoTests.framework */; };
-		A70A948277EEB0E8C1A80047 /* Pods_SIMDemo_SIMDemoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE05C2218513F6F15E7EEC98 /* Pods_SIMDemo_SIMDemoUITests.framework */; };
-		F99F47870B3E7E8730826111 /* Pods_SIMDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6DC91A88F4C119BBE211D70 /* Pods_SIMDemo.framework */; };
+		A174B4504ECCD691644C783B /* Pods_SIMDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 622E8E4AA97275078536F575 /* Pods_SIMDemoTests.framework */; };
+		DDB7B1C4FBCE569570ABD681 /* Pods_SIMDemo_SIMDemoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93E497FD1F555929F10F58F8 /* Pods_SIMDemo_SIMDemoUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,34 +79,41 @@
 		};
 /* End PBXContainerItemProxy section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		62465EDE2599C58900437B8A /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				62465F2F2599CD1800437B8A /* TBIM.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
 		29F2B1E0E9074E86A4EB356F /* Pods-SIMDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SIMDemo.debug.xcconfig"; path = "Target Support Files/Pods-SIMDemo/Pods-SIMDemo.debug.xcconfig"; sourceTree = "<group>"; };
-		62465F2A2599CD0B00437B8A /* TBIM.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TBIM.framework; sourceTree = "<group>"; };
+		621C635B264BA43C0066D6E0 /* SIMDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SIMDemo.entitlements; sourceTree = "<group>"; };
+		622E8E4AA97275078536F575 /* Pods_SIMDemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SIMDemoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		624C9F7F254FA5D40011D4C5 /* TBPreLoginVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TBPreLoginVC.h; sourceTree = "<group>"; };
 		624C9F80254FA5D40011D4C5 /* TBPreLoginVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TBPreLoginVC.m; sourceTree = "<group>"; };
 		624C9FC6254FD2150011D4C5 /* AppMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppMacro.h; sourceTree = "<group>"; };
 		6264BBA125539529005C897C /* TBChatMsgPopMenu.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TBChatMsgPopMenu.h; sourceTree = "<group>"; };
 		6264BBA225539529005C897C /* TBChatMsgPopMenu.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TBChatMsgPopMenu.m; sourceTree = "<group>"; };
+		626B47BA25C13DC9007808B8 /* TBChatFileCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TBChatFileCell.h; sourceTree = "<group>"; };
+		626B47BB25C13DC9007808B8 /* TBChatFileCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TBChatFileCell.m; sourceTree = "<group>"; };
+		626B47BF25C15C0D007808B8 /* TBWebView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TBWebView.h; sourceTree = "<group>"; };
+		626B47C025C15C0D007808B8 /* TBWebView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TBWebView.m; sourceTree = "<group>"; };
+		626B47E525C3DB3A007808B8 /* UIImageView+TBWebImage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImageView+TBWebImage.h"; sourceTree = "<group>"; };
+		626B47E625C3DB3A007808B8 /* UIImageView+TBWebImage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+TBWebImage.m"; sourceTree = "<group>"; };
+		62958C1825B95C650066E789 /* TBBaseModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TBBaseModel.h; sourceTree = "<group>"; };
+		62958C1925B95C650066E789 /* TBBaseModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TBBaseModel.m; sourceTree = "<group>"; };
+		62958C2A25BA674D0066E789 /* TBAddressBookVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TBAddressBookVC.h; sourceTree = "<group>"; };
+		62958C2B25BA674D0066E789 /* TBAddressBookVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TBAddressBookVC.m; sourceTree = "<group>"; };
+		629B590A25C02B58001CB274 /* TBUploadManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TBUploadManager.h; sourceTree = "<group>"; };
+		629B590B25C02B58001CB274 /* TBUploadManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TBUploadManager.m; sourceTree = "<group>"; };
+		629B592A25C043BD001CB274 /* TBFileManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TBFileManager.h; sourceTree = "<group>"; };
+		629B592B25C043BD001CB274 /* TBFileManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TBFileManager.m; sourceTree = "<group>"; };
+		629B593325C0F988001CB274 /* TBChatFuncsView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TBChatFuncsView.h; sourceTree = "<group>"; };
+		629B593425C0F988001CB274 /* TBChatFuncsView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TBChatFuncsView.m; sourceTree = "<group>"; };
+		629B593825C10749001CB274 /* TBCheckDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBCheckDocument.m; sourceTree = "<group>"; };
+		629B593925C10749001CB274 /* TBCheckDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBCheckDocument.h; sourceTree = "<group>"; };
+		62AC052E25BA6BB800AE3185 /* TBAddressCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TBAddressCell.h; sourceTree = "<group>"; };
+		62AC052F25BA6BB800AE3185 /* TBAddressCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TBAddressCell.m; sourceTree = "<group>"; };
 		62EC9A16254FD4C600997836 /* TBChatVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TBChatVC.h; sourceTree = "<group>"; };
 		62EC9A17254FD4C600997836 /* TBChatVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TBChatVC.m; sourceTree = "<group>"; };
 		62EC9A1C254FD4EC00997836 /* TBChatBottomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBChatBottomView.h; sourceTree = "<group>"; };
 		62EC9A1D254FD4EC00997836 /* TBChatBottomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBChatBottomView.m; sourceTree = "<group>"; };
-		62EC9A22254FDEC200997836 /* AppUnitParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppUnitParam.h; sourceTree = "<group>"; };
-		62EC9A23254FDEC200997836 /* AppUnitParam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppUnitParam.m; sourceTree = "<group>"; };
+		62EC9A22254FDEC200997836 /* AppUnitParamDemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppUnitParamDemo.h; sourceTree = "<group>"; };
+		62EC9A23254FDEC200997836 /* AppUnitParamDemo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppUnitParamDemo.m; sourceTree = "<group>"; };
 		62EC9A28254FE64900997836 /* TBSendMessageModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TBSendMessageModel.h; sourceTree = "<group>"; };
 		62EC9A29254FE64900997836 /* TBSendMessageModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TBSendMessageModel.m; sourceTree = "<group>"; };
 		62EC9A36254FF2D500997836 /* TBChatBaseCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TBChatBaseCell.h; sourceTree = "<group>"; };
@@ -169,12 +184,11 @@
 		6E88428D254BB9A5007103C8 /* TBNetReqManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TBNetReqManager.m; sourceTree = "<group>"; };
 		73BF244536E3BC21F3D52D04 /* Pods-SIMDemo-SIMDemoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SIMDemo-SIMDemoUITests.release.xcconfig"; path = "Target Support Files/Pods-SIMDemo-SIMDemoUITests/Pods-SIMDemo-SIMDemoUITests.release.xcconfig"; sourceTree = "<group>"; };
 		7BBE219EEC867E525398EA23 /* Pods-SIMDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SIMDemoTests.debug.xcconfig"; path = "Target Support Files/Pods-SIMDemoTests/Pods-SIMDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
-		D4362A122E353D8D8AB880C0 /* Pods_SIMDemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SIMDemoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D6DC91A88F4C119BBE211D70 /* Pods_SIMDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SIMDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		DE05C2218513F6F15E7EEC98 /* Pods_SIMDemo_SIMDemoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SIMDemo_SIMDemoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		93E497FD1F555929F10F58F8 /* Pods_SIMDemo_SIMDemoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SIMDemo_SIMDemoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2CB813A05517C8A72136D4A /* Pods-SIMDemo-SIMDemoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SIMDemo-SIMDemoUITests.debug.xcconfig"; path = "Target Support Files/Pods-SIMDemo-SIMDemoUITests/Pods-SIMDemo-SIMDemoUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		E465EB20F64564B3B9EB3ED5 /* Pods-SIMDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SIMDemo.release.xcconfig"; path = "Target Support Files/Pods-SIMDemo/Pods-SIMDemo.release.xcconfig"; sourceTree = "<group>"; };
 		F1C9F4FBCFD115D75ECC147B /* Pods-SIMDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SIMDemoTests.release.xcconfig"; path = "Target Support Files/Pods-SIMDemoTests/Pods-SIMDemoTests.release.xcconfig"; sourceTree = "<group>"; };
+		F78A2347EA1E6EB258CF82D7 /* Pods_SIMDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SIMDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,8 +196,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				62465F2E2599CD1800437B8A /* TBIM.framework in Frameworks */,
-				F99F47870B3E7E8730826111 /* Pods_SIMDemo.framework in Frameworks */,
+				55185E33AD47336CE211528D /* Pods_SIMDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -191,7 +204,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				90048C3A2554120D590D900C /* Pods_SIMDemoTests.framework in Frameworks */,
+				A174B4504ECCD691644C783B /* Pods_SIMDemoTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -199,7 +212,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A70A948277EEB0E8C1A80047 /* Pods_SIMDemo_SIMDemoUITests.framework in Frameworks */,
+				DDB7B1C4FBCE569570ABD681 /* Pods_SIMDemo_SIMDemoUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,12 +223,34 @@
 			isa = PBXGroup;
 			children = (
 				624C9FC6254FD2150011D4C5 /* AppMacro.h */,
-				62EC9A22254FDEC200997836 /* AppUnitParam.h */,
-				62EC9A23254FDEC200997836 /* AppUnitParam.m */,
+				62EC9A22254FDEC200997836 /* AppUnitParamDemo.h */,
+				62EC9A23254FDEC200997836 /* AppUnitParamDemo.m */,
 				62EC9A6A25513C6E00997836 /* MFToast.h */,
 				62EC9A6B25513C6E00997836 /* MFToast.m */,
 			);
 			path = Helper;
+			sourceTree = "<group>";
+		};
+		62958C2F25BA67560066E789 /* Address */ = {
+			isa = PBXGroup;
+			children = (
+				62958C2A25BA674D0066E789 /* TBAddressBookVC.h */,
+				62958C2B25BA674D0066E789 /* TBAddressBookVC.m */,
+				62AC052E25BA6BB800AE3185 /* TBAddressCell.h */,
+				62AC052F25BA6BB800AE3185 /* TBAddressCell.m */,
+			);
+			path = Address;
+			sourceTree = "<group>";
+		};
+		629B592725C04229001CB274 /* Upload */ = {
+			isa = PBXGroup;
+			children = (
+				629B590A25C02B58001CB274 /* TBUploadManager.h */,
+				629B590B25C02B58001CB274 /* TBUploadManager.m */,
+				629B592A25C043BD001CB274 /* TBFileManager.h */,
+				629B592B25C043BD001CB274 /* TBFileManager.m */,
+			);
+			path = Upload;
 			sourceTree = "<group>";
 		};
 		62EC9A31254FF28400997836 /* View */ = {
@@ -236,6 +271,8 @@
 			children = (
 				62EC9A28254FE64900997836 /* TBSendMessageModel.h */,
 				62EC9A29254FE64900997836 /* TBSendMessageModel.m */,
+				62958C1825B95C650066E789 /* TBBaseModel.h */,
+				62958C1925B95C650066E789 /* TBBaseModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -253,6 +290,8 @@
 				62EC9AE625528ABB00997836 /* TBChatIMageCell.m */,
 				62FCCC562553CDB2001740FE /* TBChatVideoCell.h */,
 				62FCCC572553CDB2001740FE /* TBChatVideoCell.m */,
+				626B47BA25C13DC9007808B8 /* TBChatFileCell.h */,
+				626B47BB25C13DC9007808B8 /* TBChatFileCell.m */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -261,6 +300,13 @@
 			isa = PBXGroup;
 			children = (
 				62EC9A9525524A5300997836 /* Emoji */,
+				629B592725C04229001CB274 /* Upload */,
+				629B593325C0F988001CB274 /* TBChatFuncsView.h */,
+				629B593425C0F988001CB274 /* TBChatFuncsView.m */,
+				629B593925C10749001CB274 /* TBCheckDocument.h */,
+				629B593825C10749001CB274 /* TBCheckDocument.m */,
+				626B47E525C3DB3A007808B8 /* UIImageView+TBWebImage.h */,
+				626B47E625C3DB3A007808B8 /* UIImageView+TBWebImage.m */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -320,7 +366,7 @@
 		6E49D98225416F3B00010564 /* SIMDemo */ = {
 			isa = PBXGroup;
 			children = (
-				62465F2A2599CD0B00437B8A /* TBIM.framework */,
+				621C635B264BA43C0066D6E0 /* SIMDemo.entitlements */,
 				6E49D98325416F3B00010564 /* AppDelegate.h */,
 				6E49D98425416F3B00010564 /* AppDelegate.m */,
 				624C9F7F254FA5D40011D4C5 /* TBPreLoginVC.h */,
@@ -375,6 +421,7 @@
 				6E884282254BA2F1007103C8 /* Group */,
 				6E8841D225483D9E007103C8 /* Chat */,
 				6E8841D125483D96007103C8 /* Session */,
+				62958C2F25BA67560066E789 /* Address */,
 			);
 			path = Module;
 			sourceTree = "<group>";
@@ -401,6 +448,8 @@
 				62EC9A4D255001DB00997836 /* TBChatMsgManager.m */,
 				6E16CFFF254F9477002DAB09 /* TBChatManager.h */,
 				6E16D000254F9477002DAB09 /* TBChatManager.m */,
+				626B47BF25C15C0D007808B8 /* TBWebView.h */,
+				626B47C025C15C0D007808B8 /* TBWebView.m */,
 				62EC9A3C254FF2DC00997836 /* Cell */,
 				62EC9A31254FF28400997836 /* View */,
 				62EC9A35254FF29000997836 /* Model */,
@@ -446,9 +495,9 @@
 		E3FA8FC6D8BF0C1C7F9CD405 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D6DC91A88F4C119BBE211D70 /* Pods_SIMDemo.framework */,
-				DE05C2218513F6F15E7EEC98 /* Pods_SIMDemo_SIMDemoUITests.framework */,
-				D4362A122E353D8D8AB880C0 /* Pods_SIMDemoTests.framework */,
+				F78A2347EA1E6EB258CF82D7 /* Pods_SIMDemo.framework */,
+				93E497FD1F555929F10F58F8 /* Pods_SIMDemo_SIMDemoUITests.framework */,
+				622E8E4AA97275078536F575 /* Pods_SIMDemoTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -464,8 +513,7 @@
 				6E49D97C25416F3B00010564 /* Sources */,
 				6E49D97D25416F3B00010564 /* Frameworks */,
 				6E49D97E25416F3B00010564 /* Resources */,
-				F94F0C2F4185A8C51711D0FC /* [CP] Embed Pods Frameworks */,
-				62465EDE2599C58900437B8A /* Embed Frameworks */,
+				3F78CE6645DD04D952A9040E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -503,7 +551,7 @@
 				6E49D9A225416F3C00010564 /* Sources */,
 				6E49D9A325416F3C00010564 /* Frameworks */,
 				6E49D9A425416F3C00010564 /* Resources */,
-				89D31796AC1B79900A82C541 /* [CP] Embed Pods Frameworks */,
+				EDDED384A0108815A9C9879A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -629,6 +677,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		3F78CE6645DD04D952A9040E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SIMDemo/Pods-SIMDemo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SIMDemo/Pods-SIMDemo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SIMDemo/Pods-SIMDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		81AB18881622FF16FEF87140 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -651,7 +716,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		89D31796AC1B79900A82C541 /* [CP] Embed Pods Frameworks */ = {
+		EDDED384A0108815A9C9879A /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -668,23 +733,6 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SIMDemo-SIMDemoUITests/Pods-SIMDemo-SIMDemoUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		F94F0C2F4185A8C51711D0FC /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SIMDemo/Pods-SIMDemo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SIMDemo/Pods-SIMDemo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SIMDemo/Pods-SIMDemo-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -692,14 +740,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				629B593525C0F988001CB274 /* TBChatFuncsView.m in Sources */,
+				626B47C125C15C0D007808B8 /* TBWebView.m in Sources */,
 				62EC9A9E25524A7800997836 /* UITextView+Rich.m in Sources */,
 				6E8841D525483DC4007103C8 /* TBSessionController.m in Sources */,
 				62EC9A85255249DF00997836 /* TBEmojiHelp.m in Sources */,
 				62EC9A38254FF2D500997836 /* TBChatBaseCell.m in Sources */,
 				62EC9A8B255249EE00997836 /* NSString+Rich.m in Sources */,
-				62EC9A24254FDEC200997836 /* AppUnitParam.m in Sources */,
+				629B593A25C10749001CB274 /* TBCheckDocument.m in Sources */,
+				62EC9A24254FDEC200997836 /* AppUnitParamDemo.m in Sources */,
 				62FCCC5E2553D4B0001740FE /* TBChatMsgPreview.m in Sources */,
 				62EC9A2A254FE64900997836 /* TBSendMessageModel.m in Sources */,
+				62958C2C25BA674D0066E789 /* TBAddressBookVC.m in Sources */,
 				62EC9A6C25513C6E00997836 /* MFToast.m in Sources */,
 				62EC9A42254FF31100997836 /* TBChatTextCell.m in Sources */,
 				6E8841CC25483D3B007103C8 /* TBMainTabBarController.m in Sources */,
@@ -707,24 +759,30 @@
 				62EC9A1E254FD4EC00997836 /* TBChatBottomView.m in Sources */,
 				62EC9AE725528ABB00997836 /* TBChatIMageCell.m in Sources */,
 				62EC9AB825524EA400997836 /* TBEmojiKeyboardView.m in Sources */,
+				626B47BC25C13DC9007808B8 /* TBChatFileCell.m in Sources */,
 				6264BBA325539529005C897C /* TBChatMsgPopMenu.m in Sources */,
 				6E8841FD254845A3007103C8 /* TBSessionCell.m in Sources */,
+				629B592C25C043BD001CB274 /* TBFileManager.m in Sources */,
 				62EC9A9D25524A7800997836 /* RichTextAttachment.m in Sources */,
 				6E49D98525416F3B00010564 /* AppDelegate.m in Sources */,
 				6E88425925493E6B007103C8 /* UIColor+TB.m in Sources */,
 				624C9F81254FA5D40011D4C5 /* TBPreLoginVC.m in Sources */,
 				62EC9A18254FD4C600997836 /* TBChatVC.m in Sources */,
+				629B590C25C02B58001CB274 /* TBUploadManager.m in Sources */,
 				624C9FC7254FD2150011D4C5 /* AppMacro.h in Sources */,
 				62EC9A9125524A4B00997836 /* TBCustomEmojiModel.m in Sources */,
+				626B47E725C3DB3A007808B8 /* UIImageView+TBWebImage.m in Sources */,
 				6E8842632549452A007103C8 /* NSDate+Show.m in Sources */,
 				62FCCC582553CDB2001740FE /* TBChatVideoCell.m in Sources */,
 				6E88428E254BB9A5007103C8 /* TBNetReqManager.m in Sources */,
 				6E16D00D254FEC8F002DAB09 /* NSArray+SIMMessage.m in Sources */,
 				6E16D001254F9477002DAB09 /* TBChatManager.m in Sources */,
 				6E49D99625416F3B00010564 /* main.m in Sources */,
+				62AC053025BA6BB800AE3185 /* TBAddressCell.m in Sources */,
 				62EC9A722551537A00997836 /* TBSingleTxtCell.m in Sources */,
 				6E884285254BA306007103C8 /* TBGroupManager.m in Sources */,
 				6E884269254949D1007103C8 /* TBSessionManager.m in Sources */,
+				62958C1A25B95C650066E789 /* TBBaseModel.m in Sources */,
 				62EC9A4E255001DB00997836 /* TBChatMsgManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -898,11 +956,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 2;
-				DEVELOPMENT_TEAM = V7S7ZQC6QG;
+				CODE_SIGN_ENTITLEMENTS = SIMDemo/SIMDemo.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 3;
+				DEVELOPMENT_TEAM = DA32M7N898;
 				ENABLE_BITCODE = NO;
+				EXCLUDED_ARCHS = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/SIMDemo/SIMFramework",
@@ -911,7 +971,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/SIMDemo/SIMDemo.pch";
 				INFOPLIST_FILE = SIMDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -919,8 +979,9 @@
 				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sammbo.imsdk;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = development_sammbo_20211223;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				TARGETED_DEVICE_FAMILY = 1;
+				VALID_ARCHS = "x86_64 arm64 arm64e";
 				WARNING_CFLAGS = "-Wshorten-64-to-32";
 			};
 			name = Debug;
@@ -931,11 +992,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = SIMDemo/SIMDemo.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = V7S7ZQC6QG;
 				ENABLE_BITCODE = NO;
+				EXCLUDED_ARCHS = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/SIMDemo/SIMFramework",
@@ -944,16 +1007,19 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/SIMDemo/SIMDemo.pch";
 				INFOPLIST_FILE = SIMDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sammbo.imsdk;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = Distribution_sammbo_20211223;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				PROVISIONING_PROFILE_SPECIFIER = Distribution_sammbo_20220512;
+				TARGETED_DEVICE_FAMILY = 1;
+				VALIDATE_PRODUCT = YES;
+				VALID_ARCHS = "x86_64 arm64 arm64e";
 				WARNING_CFLAGS = "-Wshorten-64-to-32";
 			};
 			name = Release;

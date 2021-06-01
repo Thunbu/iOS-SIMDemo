@@ -2,7 +2,7 @@
 //  TBSessionCell.h
 //  SIMDemo
 //
-//  Created by changxuanren on 2020/10/27.
+//  on 2020/10/27.
 //
 
 #import <MGSwipeTableCell/MGSwipeTableCell.h>

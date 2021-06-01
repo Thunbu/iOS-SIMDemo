@@ -2,7 +2,7 @@
 //  TBSessionController.m
 //  SIMDemo
 //
-//  Created by changxuanren on 2020/10/27.
+//  on 2020/10/27.
 //
 
 #import "TBSessionController.h"
@@ -10,6 +10,10 @@
 #import "TBSessionManager.h"
 #import "TBGroupManager.h"
 #import "TBChatVC.h"
+#import "TBPreLoginVC.h"
+#import "TBUploadManager.h"
+#import "TBAddressBookVC.h"
+
 
 @interface TBSessionController ()<MGSwipeTableCellDelegate>
 
@@ -48,9 +52,7 @@
         return;
     }
     SIMSession *session = self.sessionArray[indexPath.row];
-    TBChatVC *chatVC = [[TBChatVC alloc]initWithSession:session];
-    chatVC.hidesBottomBarWhenPushed = YES;
-    [self.navigationController pushViewController:chatVC animated:YES];
+    [self jumpChatVC:session];
 }
 
 - (BOOL)swipeTableCell:(MGSwipeTableCell *)cell canSwipe:(MGSwipeDirection)direction {
@@ -70,105 +72,208 @@
     SIMSession * session = self.sessionArray[indexPath.row];
     cell.rightSwipeSettings.hideAnimation.duration = 0.4f;
     
-    @weakify(self);
-    MGSwipeButton * noDisturbBtn;
-    if (session.isNoDisturb) {
-        noDisturbBtn = [MGSwipeButton buttonWithTitle:@"打扰" icon:nil backgroundColor:[UIColor TB_colorForHex:0xFF6D5E] padding:25 callback:^BOOL(MGSwipeTableCell * _Nonnull cell) {
-            // 取消免打扰
-            [[TBSessionManager sharedInstanced] noDisturbSessionWithSessionid:session.sessionId isMute:NO succ:^{
-                @strongify(self);
-                session.isNoDisturb = NO;
-                [self reloadTableView];
-            } fail:^(SIMError * _Nonnull error) {
-                    
-            }];
-            return YES;
+    NSString *isDisturbStr = session.isNoDisturb ? @"打扰" : @"免打扰";
+    MGSwipeButton * isDisturbBtn = [MGSwipeButton buttonWithTitle:isDisturbStr icon:nil backgroundColor:[UIColor TB_colorForHex:0xFACE3E] padding:0 callback:^BOOL(MGSwipeTableCell * _Nonnull cell) {
+        [[TBSessionManager sharedInstanced] noDisturbSessionWithSessionid:session.sessionId isMute:!session.isNoDisturb succ:^{
+            session.isNoDisturb = !session.isNoDisturb;
+            [self reloadTableView];
+        } fail:^(SIMError * _Nonnull error) {
+            
         }];
-    }
-    else {
-        noDisturbBtn = [MGSwipeButton buttonWithTitle:@"免打扰" icon:nil backgroundColor:[UIColor TB_colorForHex:0xFF6D5E] padding:25 callback:^BOOL(MGSwipeTableCell * _Nonnull cell) {
-            // 免打扰
-            [[TBSessionManager sharedInstanced] noDisturbSessionWithSessionid:session.sessionId isMute:YES succ:^{
-                @strongify(self);
-                session.isNoDisturb = YES;
-                [self reloadTableView];
-            } fail:^(SIMError * _Nonnull error) {
-                    
-            }];
-            return YES;
+        return YES;
+    }];
+    isDisturbBtn.buttonWidth = 75;
+    isDisturbBtn.titleLabel.font = [UIFont systemFontOfSize:14];
+    NSString *isTopStr = session.isTop ? @"取消置顶" : @"置顶";
+    MGSwipeButton *isTopBtn = [MGSwipeButton buttonWithTitle:isTopStr icon:nil backgroundColor:[UIColor TB_colorForHex:0xB6B6B6] padding:0 callback:^BOOL(MGSwipeTableCell * _Nonnull cell) {
+        [[TBSessionManager sharedInstanced] topSessionWithSessionid:session.sessionId isTop:!session.isTop succ:^{
+            session.isTop = !session.isTop;
+            [self reloadTableView];
+        } fail:^(SIMError * _Nonnull error) {
+            
         }];
-    }
-    
-    if (session.isTop) {
-        MGSwipeButton * cancelTopBtn = [MGSwipeButton buttonWithTitle:@"取消置顶" icon:nil backgroundColor:[UIColor TB_colorForHex:0xBBBEBE] padding:25 callback:^BOOL(MGSwipeTableCell * _Nonnull cell) {
-            // 取消置顶
-            [[TBSessionManager sharedInstanced] topSessionWithSessionid:session.sessionId isTop:NO succ:^{
-                @strongify(self);
-                session.isTop = NO;
-                [self reloadTableView];
-            } fail:^(SIMError * _Nonnull error) {
-                
-            }];
-            return YES;
-        }];
-        return @[noDisturbBtn,cancelTopBtn];
-    }
-    else {
-        MGSwipeButton * setTopBtn = [MGSwipeButton buttonWithTitle:@"置顶" icon:nil backgroundColor:[UIColor TB_colorForHex:0xBBBEBE] padding:25 callback:^BOOL(MGSwipeTableCell * _Nonnull cell) {
-            // 置顶
-            [[TBSessionManager sharedInstanced] topSessionWithSessionid:session.sessionId isTop:YES succ:^{
-                @strongify(self);
-                session.isTop = YES;
-                [self reloadTableView];
-            } fail:^(SIMError * _Nonnull error) {
-                
-            }];
-            return YES;
-        }];
-        return @[noDisturbBtn,setTopBtn];
-    }
+        return YES;
+    }];
+    isTopBtn.buttonWidth = 75;
+    isTopBtn.titleLabel.font = [UIFont systemFontOfSize:14];
+    NSString *deleteStr = @"删除";
+    MGSwipeButton *deleteBtn = [MGSwipeButton buttonWithTitle:deleteStr icon:nil backgroundColor:[UIColor TB_colorForHex:0xFF6D5E] padding:0 callback:^BOOL(MGSwipeTableCell * _Nonnull cell) {
+        [self deleteSession:session];
+        return YES;
+    }];
+    deleteBtn.buttonWidth = 75;
+    deleteBtn.titleLabel.font = [UIFont systemFontOfSize:14];
+    return @[deleteBtn,isDisturbBtn,isTopBtn];
 }
 
-
-#pragma mark - Action
-
-- (void)creatGroup {
-    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    
-    NSString *groupName = [NSString stringWithFormat:@"群%.f", [[NSDate date] timeIntervalSince1970]*1000];
-    [[TBGroupManager sharedInstanced] createGroup:groupName sessionIds:@[@"A_8589934611", @"A_8589934612", @"A_8589934613", @"A_8589934614", @"A_8589934616", @"A_8589934618"] succ:^(NSString * _Nonnull groupId) {
-        [MBProgressHUD hideHUDForView:self.view animated:YES];
+// 删除会话
+- (void)deleteSession:(SIMSession *)session{
+    UIAlertController *alertVC = [UIAlertController alertControllerWithTitle:@"提示" message:@"确定删除?" preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *cancleAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         
-        SIMSession *session = [[SIMSession alloc] init];
-        session.sessionType = SIMSessionType_GROUP;
-        session.sessionId = groupId;
-        session.sessionName = groupName;
-        
-        //服务器同步会话
-        [[TBSessionManager sharedInstanced] getSessionInfo:groupId succ:^(SIMSession * _Nullable session) {
-            
+    }];
+    UIAlertAction *sureAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        [[TBSessionManager sharedInstanced] delSession:session succ:^{
+            [self.sessionArray removeObject:session];
+            [self.tableView reloadData];
         } fail:^(SIMError * _Nullable error) {
             
         }];
-    } fail:^(SIMError * _Nonnull error) {
-        [MBProgressHUD hideHUDForView:self.view animated:YES];
-        NSLog(@"建群失败 %@", error);
+    }];
+    [alertVC addAction:cancleAction];
+    [alertVC addAction:sureAction];
+    [self.navigationController presentViewController:alertVC animated:YES completion:^{
+        
+    }];
+}
+#pragma mark - Action
+
+- (void)jumpChatVC:(SIMSession *)session{
+    TBChatVC *chatVC = [[TBChatVC alloc]initWithSession:session];
+    chatVC.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:chatVC animated:YES];
+}
+
+- (void)creatGroup {
+    TBAddressBookVC *addressVC = [[TBAddressBookVC alloc]initWithType:TBAddressBookTypeCheck];
+    addressVC.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:addressVC animated:YES];
+    
+    addressVC.sureBtnClick = ^(NSMutableArray * _Nonnull checkArr) {
+        [self createGroupWithUsers:checkArr];
+    };
+    
+}
+
+- (void)createSingleChat:(TBUserModel *)model{
+    
+    SIMSession *jumpSession = nil;
+    for (SIMSession *session in self.sessionArray){
+        if ([session.sessionId isEqualToString:model.account]){
+            jumpSession = session;
+        }
+    }
+    
+    if (jumpSession){
+        [self jumpChatVC:jumpSession];
+        return;
+    }
+    
+    SIMSessionRequest *request = [[SIMSessionRequest alloc]init];
+    request.sessionId = model.account;
+    request.sessionType = SIMSessionType_P2P;
+    request.secType = SIMSecType_NORMAL;
+    [[SIMSessionManager sharedInstance] getSessionInfo:request succ:^(SIMSession * _Nonnull session) {
+        [self jumpChatVC:session];
+        session.avatar = model.avatar;
+        if (self.sessionArray.count == 0){
+            [self.sessionArray addObject:session];
+        }
+        else {
+            [self.sessionArray insertObject:session atIndex:0];
+        }
+        [self.tableView reloadData];
+    } fail:^(SIMError * _Nullable error) {
+        NSLog(@"---createSingleChat----%@",error);
     }];
 }
 
+- (void)createGroupWithUsers:(NSMutableArray<TBUserModel *> *)users{
+    if (users.count == 1){
+        [self createSingleChat:users[0]];
+    }
+    else {
+        NSMutableString *groupName = [[NSMutableString alloc]initWithString:@""];
+        NSMutableArray *userIds = [[NSMutableArray alloc]initWithCapacity:0];
+        for (TBUserModel *model in users){
+            [userIds addObject:model.account];
+            if ([groupName isEqualToString:@""]){
+                [groupName appendString:model.userNickname];
+            }
+            else {
+                [groupName appendString:[NSString stringWithFormat:@",%@",model.userNickname]];
+            }
+        }
+        
+        [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        [[TBGroupManager sharedInstanced] createGroup:groupName sessionIds:userIds succ:^(NSString * _Nonnull groupId) {
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
+        } fail:^(SIMError * _Nonnull error) {
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
+        }];
+    }
+    
+}
+- (void)loginOutSdk{
+    [[SIMManager sharedInstance] logout:^{
+        UINavigationController *loginNav= [[UINavigationController alloc]initWithRootViewController:[TBPreLoginVC new]];
+        [UIApplication sharedApplication].keyWindow.rootViewController = loginNav;
+    } fail:^(SIMError * _Nullable error) {
+        
+    }];
+    
+}
 
 #pragma mark - privite/public
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(sendNewMessage:) name:@"TBSendNewMessage" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(createNewChat:) name:@"TBCreateNewChat" object:nil];
+    
     [self bindViewModel];
+    [self qiNiuPolicy];
+    
+}
+
+- (void)sendNewMessage:(NSNotification *)noti{
+    SIMMessage *message = (SIMMessage *)noti.object;
+    if (message && [message isKindOfClass:[message class]]){
+        for (SIMSession *session in self.sessionArray){
+            if ([session.sessionId isEqualToString:message.getSessionId]){
+                session.lastMessage = message;
+                [self.tableView reloadData];
+                break;
+            }
+        }
+    }
+}
+
+- (void)createNewChat:(NSNotification *)noti{
+    TBUserModel *userModel = noti.object;
+    if (userModel && [userModel isKindOfClass:[TBUserModel class]]){
+        [self createSingleChat:userModel];
+    }
+}
+
+- (void)qiNiuPolicy{
+    [[SIMManager sharedInstance] SIM_uploadPolocy:^(id  _Nonnull data) {
+        NSDictionary *dic = (NSDictionary *)data;
+        if (dic[@"SecurityToken"] && dic[@"SecurityDomain"]){
+            [[TBUploadManager sharedInstance] configQiNiuUploadPolicy:dic[@"SecurityDomain"] token:dic[@"SecurityToken"]];
+        }
+    } fail:^(SIMError * _Nullable error) {
+        
+    }];
 }
 
 - (void)bindViewModel {
     [self initializationParameters];
     [self initializationUI];
     
+    [self reloadData];
+    
+    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithTitle:@"发起群聊" style:UIBarButtonItemStylePlain target:self action:@selector(creatGroup)];
+    self.navigationItem.rightBarButtonItem = item;
+    
+    UIBarButtonItem *loginOutItem = [[UIBarButtonItem alloc] initWithTitle:@"退出登录" style:UIBarButtonItemStylePlain target:self action:@selector(loginOutSdk)];
+    self.navigationItem.leftBarButtonItem = loginOutItem;
+
+}
+
+- (void)reloadData{
     [[SIMSessionManager sharedInstance] getSessionList:0 succ:^(NSArray<SIMSession *> * _Nonnull sessions) {
         dispatch_async(dispatch_get_main_queue(), ^{
             self.sessionArray = [NSMutableArray arrayWithArray:sessions];
@@ -177,19 +282,6 @@
     } fail:^(SIMError * _Nonnull error) {
         
     }];
-    
-    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithTitle:@"发起群聊" style:UIBarButtonItemStylePlain target:self action:@selector(creatGroup)];
-    self.navigationItem.rightBarButtonItem = item;
-
-//    SIMSessionRequest * requset = [SIMSessionRequest new];
-//    requset.sessionId = @"A_8589934618";
-//    requset.sessionType = SIMSessionType_P2P;
-//    requset.secType = SIMSecType_NORMAL;
-//    [[SIMSessionManager sharedInstance] getSessionInfo:requset succ:^(SIMSession * _Nonnull session) {
-//
-//    } fail:^(SIMError * _Nonnull error) {
-//
-//    }];
 }
 
 - (void)initializationUI {
@@ -244,12 +336,9 @@
         [self reloadTableView];
     }
     else {
-        [[TBSessionManager sharedInstanced] getSessionInfo:sessionId succ:^(SIMSession * _Nonnull session) {
-            [self.sessionArray insertObject:session atIndex:0];
-            [self reloadTableView];
-        } fail:^(SIMError * _Nonnull error) {
-            
-        }];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [self reloadData];
+        });
     }
 }
 

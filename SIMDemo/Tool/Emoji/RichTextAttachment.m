@@ -2,8 +2,7 @@
 //  RichTextAttachment.m
 //  TextViewWithImage
 //
-//  Created by yangfan on 2017/8/13.
-//  Copyright © 2017年 Adron. All rights reserved.
+//  on 2017/8/13.
 //
 
 #import "RichTextAttachment.h"

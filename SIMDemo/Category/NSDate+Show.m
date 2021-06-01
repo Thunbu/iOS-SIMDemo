@@ -2,8 +2,7 @@
 //  NSDate+Show.m
 //  Geely
 //
-//  Created by wangjie on 2017/12/21.
-//  Copyright © 2017年 Geely. All rights reserved.
+//  on 2017/12/21.
 //
 
 #import "NSDate+Show.h"

@@ -2,7 +2,7 @@
 //  TBGroupManager.m
 //  SIMDemo
 //
-//  Created by changxuanren on 2020/10/30.
+//  on 2020/10/30.
 //
 
 #import "TBGroupManager.h"

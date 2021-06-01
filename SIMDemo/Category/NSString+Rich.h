@@ -2,8 +2,7 @@
 //  NSString+Rich.h
 //  private
 //
-//  Created by yangfan on 2018/3/9.
-//  Copyright © 2018年 aaaa. All rights reserved.
+//  on 2018/3/9.
 //
 
 #import <Foundation/Foundation.h>
@@ -17,5 +16,5 @@
  */
 - (NSMutableAttributedString *)TB_richTextForYYTextWithFont:(UIFont *)font;
 
-
++ (NSString *)TB_randomUserAvatar;
 @end

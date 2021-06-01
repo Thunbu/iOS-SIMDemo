@@ -2,8 +2,7 @@
 //  TBGLEmojiHelp.m
 //  Geely
 //
-//  Created by yangfan on 2018/3/16.
-//  Copyright © 2018年 Geely. All rights reserved.
+//  on 2018/3/16.
 //
 
 #import "TBEmojiHelp.h"
@@ -90,6 +89,9 @@ static NSDictionary *geelyGifEmojiDic;
 
 + (NSString *)removeLastEmoji:(NSString *)text {
     
+    if (text.length <= 0){
+        return @"";
+    }
     NSString *result = [text copy];
     //最后一个字符不是]，说明肯定不是emoji表情，只删除最后一个字符
     if (![[result substringFromIndex:result.length-1] isEqualToString:@"]"]) {
@@ -268,23 +270,23 @@ static NSDictionary *geelyGifEmojiDic;
     if (!geelyGifEmojiDic) {
         geelyGifEmojiDic = @{
                              // gif 动态图片的的显示
-                             @0 : @[ @"image_gif_0000001.gif", @"NO.1",@"http://ctdfs.geely.com/C3ImageGif/image_gif_0000001.gif" ],
-                             @1 : @[ @"image_gif_0000002.gif", @"NO", @"http://ctdfs.geely.com/C3ImageGif/image_gif_0000002.gif" ],
-                             @2 : @[ @"image_gif_0000003.gif", @"OK",@"http://ctdfs.geely.com/C3ImageGif/image_gif_0000003.gif" ],
-                             @3 : @[ @"image_gif_0000004.gif", @"拜拜" ,@"http://ctdfs.geely.com/C3ImageGif/image_gif_0000004.gif"],
-                             @4 : @[ @"image_gif_0000005.gif", @"hello", @"http://ctdfs.geely.com/C3ImageGif/image_gif_0000005.gif" ],
-                             @5 : @[ @"image_gif_0000006.gif", @"娇羞",@"http://ctdfs.geely.com/C3ImageGif/image_gif_0000006.gif" ],
-                             @6 : @[ @"image_gif_0000007.gif", @"美好的一天" ,@"http://ctdfs.geely.com/C3ImageGif/image_gif_0000007.gif"],
-                             @7 : @[ @"image_gif_0000008.gif", @"燃烧吧小宇宙",@"http://ctdfs.geely.com/C3ImageGif/image_gif_0000008.gif" ],
-                             @8 : @[ @"image_gif_0000009.gif", @"赞赞赞",@"http://ctdfs.geely.com/C3ImageGif/image_gif_0000009.gif" ],
-                             @9 : @[ @"image_gif_0000010.gif", @"我想静静",@"http://ctdfs.geely.com/C3ImageGif/image_gif_0000010.gif" ],
-                             @10 : @[ @"image_gif_0000011.gif", @"小目标", @"http://ctdfs.geely.com/C3ImageGif/image_gif_0000011.gif" ],
-                             @11 : @[ @"image_gif_0000012.gif", @"洪荒之力",@"http://ctdfs.geely.com/C3ImageGif/image_gif_0000012.gif" ],
-                             @12 : @[ @"image_gif_0000013.gif", @"请叫我雷锋" , @"http://ctdfs.geely.com/C3ImageGif/image_gif_0000013.gif"],
-                             @13 : @[ @"image_gif_0000014.gif", @"停不下来",@"http://ctdfs.geely.com/C3ImageGif/image_gif_0000014.gif"],
-                             @14 : @[ @"image_gif_0000015.gif", @"为人民服务",@"http://ctdfs.geely.com/C3ImageGif/image_gif_0000015.gif" ],
-                             @15 : @[ @"image_gif_0000016.gif", @"不开心",@"http://ctdfs.geely.com/C3ImageGif/image_gif_0000016.gif" ],
-                             @16 : @[ @"image_gif_0000017.gif", @"圣诞节",@"http://ctdfs.geely.com/C3ImageGif/image_gif_0000017.gif" ]
+                             @0 : @[  ],
+                             @1 : @[  ],
+                             @2 : @[  ],
+                             @3 : @[ ],
+                             @4 : @[  ],
+                             @5 : @[ ],
+                             @6 : @[ ],
+                             @7 : @[ ],
+                             @8 : @[ ],
+                             @9 : @[  ],
+                             @10 : @[  ],
+                             @11 : @[  ],
+                             @12 : @[ ],
+                             @13 : @[ ],
+                             @14 : @[ ],
+                             @15 : @[ ],
+                             @16 : @[ ]
                              };
     }
     return geelyGifEmojiDic;

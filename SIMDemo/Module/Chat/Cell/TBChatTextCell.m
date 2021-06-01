@@ -2,7 +2,7 @@
 //  TBChatTextCell.m
 //  SIMDemo
 //
-//  Created by xiaobing on 2020/11/2.
+//  on 2020/11/2.
 //
 
 #import "TBChatTextCell.h"

@@ -2,7 +2,7 @@
 //  TBSingleTxtCell.h
 //  SIMDemo
 //
-//  Created by xiaobing on 2020/11/3.
+//  on 2020/11/3.
 //
 
 #import <UIKit/UIKit.h>

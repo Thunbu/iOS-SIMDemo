@@ -2,7 +2,7 @@
 //  SIMDemo.pch
 //  SIMDemo
 //
-//  Created by changxuanren on 2020/10/28.
+//  on 2020/10/28.
 //
 
 #ifndef SIMDemo_pch
@@ -10,7 +10,8 @@
 
 // Include any system framework and library headers here that should be included in all compilation units.
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
-#import <TBIM/SIMKit.h>
+
+#import <SIMKit.h>
 #import <Masonry/Masonry.h>
 #import <SDWebImage/UIImageView+WebCache.h>
 #import <ReactiveCocoa/ReactiveCocoa.h>
@@ -23,9 +24,11 @@
 #import "TBNetReqManager.h"
 
 #import "AppMacro.h"
-#import "AppUnitParam.h"
+#import "AppUnitParamDemo.h"
 #import "NSString+Addtions.h"
 #import "MFToast.h"
 #import "TBChatManager.h"
+#import "TBBaseModel.h"
+#import <MJRefresh.h>
 
 #endif /* SIMDemo_pch */

@@ -2,7 +2,7 @@
 //  TBSessionManager.m
 //  SIMDemo
 //
-//  Created by changxuanren on 2020/10/28.
+//  on 2020/10/28.
 //
 
 #import "TBSessionManager.h"

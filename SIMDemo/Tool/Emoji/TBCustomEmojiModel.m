@@ -2,8 +2,7 @@
 //  GLCustomEmojiModel.m
 //  Geely
 //
-//  Created by Yang Viggo on 2018/10/18.
-//  Copyright © 2018 Geely. All rights reserved.
+//  on 2018/10/18.
 //
 
 #import "TBCustomEmojiModel.h"
@@ -21,7 +20,8 @@
 }
 
 - (instancetype)initWithCoder:(NSCoder *)aDecoder {
-    if (self == [super init]) {
+    self = [super init];
+    if (self) {
         self.emojiId = [aDecoder decodeObjectForKey:@"emojiId"];
         self.imgMd = [aDecoder decodeObjectForKey:@"imgMd"];
         self.imgUrl = [aDecoder decodeObjectForKey:@"imgUrl"];
@@ -42,7 +42,8 @@
 }
 
 - (instancetype)initWithCoder:(NSCoder *)aDecoder {
-    if (self == [super init]) {
+    self = [super init];
+    if (self) {
         self.datasource = [aDecoder decodeObjectForKey:@"datasource"];
     }
     return self;

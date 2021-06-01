@@ -1,17 +1,16 @@
 # Uncomment the next line to define a global platform for your project
 platform :ios, '9.0'
 
+use_frameworks!
+
 target 'SIMDemo' do
   # Comment the next line if you don't want to use dynamic frameworks
-  use_frameworks!
+  
   inhibit_all_warnings!
-  source 'http://10.86.78.213:8000/ios_module_group/NBSpec.git'
   source 'https://github.com/CocoaPods/Specs.git'
+  source 'https://github.com/Thunbu/TBIMSpec.git'
 
-  # Pods for SIMDemo
-#  pod 'SIMSDK', :path => '../SIMSDK-API/'
-#  pod 'SIMSDK', '0.0.7'
-
+  pod 'TBIMLibrary', '0.0.132' # github 公开
   # UI相对布局库
   pod 'Masonry', '~> 1.1.0'
   # 图片加载库
@@ -26,11 +25,14 @@ target 'SIMDemo' do
   
   pod 'MJRefresh'
   
-  pod 'AFNetworking'
+  pod 'AFNetworking','~> 4.0.1'
   pod 'YYModel'
   pod 'SocketRocket'
   pod 'RealReachability'
   pod 'ReactiveCocoa', '~> 2.5'
+  pod 'MJRefresh'
+  pod "Qiniu", "~> 8.1"
+  pod 'AliyunOSSiOS', '~> 2.10.7'
 
   target 'SIMDemoTests' do
     inherit! :search_paths

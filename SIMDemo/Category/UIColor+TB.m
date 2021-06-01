@@ -2,7 +2,7 @@
 //  UIColor+TB.m
 //  SIMDemo
 //
-//  Created by changxuanren on 2020/10/28.
+//  on 2020/10/28.
 //
 
 #import "UIColor+TB.h"

@@ -2,7 +2,7 @@
 //  TBChatBaseCell.h
 //  SIMDemo
 //
-//  Created by xiaobing on 2020/11/2.
+//  on 2020/11/2.
 //
 
 #import <UIKit/UIKit.h>
@@ -20,6 +20,7 @@ typedef void (^chatCellGesture)(UIGestureRecognizer *,TBChatGestureType);
 
 @interface TBChatBaseCell : UITableViewCell
 
+@property(nonatomic, strong)UIImageView *bubbleImg;
 @property(nonatomic, strong)UIView *messageView;// 主view 承载所有消息显示 和 事件处理
 @property(nonatomic, copy)chatCellGesture cellGesture; // 所有事件回调
 

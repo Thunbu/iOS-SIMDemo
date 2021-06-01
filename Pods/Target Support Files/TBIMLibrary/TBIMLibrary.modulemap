@@ -1,0 +1,6 @@
+framework module TBIMLibrary {
+  umbrella header "TBIMLibrary-umbrella.h"
+
+  export *
+  module * { export * }
+}

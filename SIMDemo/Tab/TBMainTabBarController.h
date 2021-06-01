@@ -2,7 +2,7 @@
 //  MainTabBarController.h
 //  SIMDemo
 //
-//  Created by changxuanren on 2020/10/27.
+//  on 2020/10/27.
 //
 
 #import <UIKit/UIKit.h>

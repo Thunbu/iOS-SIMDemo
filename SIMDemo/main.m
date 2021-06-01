@@ -2,7 +2,7 @@
 //  main.m
 //  SIMDemo
 //
-//  Created by changxuanren on 2020/10/22.
+//  on 2020/10/22.
 //
 
 #import <UIKit/UIKit.h>

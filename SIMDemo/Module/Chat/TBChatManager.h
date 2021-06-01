@@ -2,12 +2,13 @@
 //  TBChatManager.h
 //  SIMDemo
 //
-//  Created by changxuanren on 2020/11/2.
+//  on 2020/11/2.
 //
 
 #import <Foundation/Foundation.h>
 
 NS_ASSUME_NONNULL_BEGIN
+@class TBSendMessageModel;
 
 @protocol TBIMChatMessageDelegate <NSObject>
 @optional
@@ -15,7 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)messageDidDeleted:(SIMMessage *)message;
 @end
 
-@interface TBChatManager : NSObject
+@interface TBChatManager : NSObject<SIMListener,SIMConnListener>
 
 + (instancetype)sharedInstanced;
 
@@ -50,6 +51,8 @@ NS_ASSUME_NONNULL_BEGIN
 //发送视频消息
 - (void)sendVideoMessageTo:(NSString *)to url:(NSString *)url coverUrl:(NSString *)coverUrl completion:(void(^)(SIMMessage *, SIMError *error))completion;
 
+//发送文件
+- (void)sendFileMessageTo:(NSString *)to msgModel:(TBSendMessageModel *)model completion:(void(^)(SIMMessage *, SIMError *error))completion;
 @end
 
 NS_ASSUME_NONNULL_END

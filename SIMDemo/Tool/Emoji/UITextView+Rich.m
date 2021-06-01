@@ -2,8 +2,7 @@
 //  UITextView+Rich.m
 //  private
 //
-//  Created by yangfan on 2018/3/9.
-//  Copyright © 2018年 aaaa. All rights reserved.
+//  on 2018/3/9.
 //
 
 #import "RichTextAttachment.h"

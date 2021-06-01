@@ -2,8 +2,7 @@
 //  GLCustomEmojiModel.h
 //  Geely
 //
-//  Created by Yang Viggo on 2018/10/18.
-//  Copyright © 2018 Geely. All rights reserved.
+//  on 2018/10/18.
 //
 
 #import <Foundation/Foundation.h>

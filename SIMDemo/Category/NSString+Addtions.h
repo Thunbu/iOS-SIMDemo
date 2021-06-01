@@ -2,8 +2,7 @@
 //  NSString+Addtions.h
 //  Geely
 //
-//  Created by yangfan on 2017/6/25.
-//  Copyright © 2017年 Geely. All rights reserved.
+//  on 2017/6/25.
 //
 
 #import <Foundation/Foundation.h>
@@ -14,5 +13,5 @@
 
 - (CGFloat)getTextHeightWithFont:(UIFont *)font width:(CGFloat)width;
 - (CGFloat)getTextWidthWithFont:(UIFont *)font height:(CGFloat)height;
-
+- (SIMFileFormat)fileFormat;
 @end

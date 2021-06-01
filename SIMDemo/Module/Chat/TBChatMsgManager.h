@@ -2,7 +2,7 @@
 //  TBChatManager.h
 //  SIMDemo
 //
-//  Created by xiaobing on 2020/11/2.
+//  on 2020/11/2.
 //
 
 #import <Foundation/Foundation.h>

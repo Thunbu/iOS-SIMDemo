@@ -2,7 +2,7 @@
 //  TBChatBottomView.m
 //  SIMDemo
 //
-//  Created by xiaobing on 2020/11/2.
+//  on 2020/11/2.
 //
 
 #import "TBChatBottomView.h"
@@ -10,6 +10,10 @@
 #import "TBEmojiKeyboardView.h"
 #import "TBEmojiHelp.h"
 #import <Photos/Photos.h>
+#import "TBUploadManager.h"
+#import "TBFileManager.h"
+#import "TBChatFuncsView.h"
+#import "TBCheckDocument.h"
 
 @interface TBChatBottomView()<UITextViewDelegate,UINavigationControllerDelegate,UIImagePickerControllerDelegate>
 
@@ -19,6 +23,7 @@
 @property(nonatomic, assign)CGFloat bottomHeight; // 除去固定内容高度后 剩余的高度
 @property(nonatomic, strong)TBEmojiKeyboardView *emojiView;
 @property(nonatomic, strong)UIView *botContentView; // 承载 emojiView 等
+@property(nonatomic, strong)TBChatFuncsView *chatFuncsView; // 多功能区
 @property(nonatomic, assign)BOOL keyboardIsShow;
 @end
 
@@ -85,9 +90,10 @@
     sender.selected = YES;
     _currentActiveBtn.selected = !sender.selected;
     _currentActiveBtn = sender;
+    
     if (sender.tag == 10000){// 表情
         [self changeBotContentStatus:256];
-        _botContentView = [[TBEmojiKeyboardView alloc]init];
+        _botContentView = [[UIView alloc]init];
         [self addSubview:_botContentView];
         [_botContentView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.right.bottom.equalTo(self);
@@ -127,8 +133,45 @@
         }];
     }
     else if (sender.tag == 10002){// 加号
-        [self changeBotContentStatus:0];
+        [self changeBotContentStatus:256];
+        
+        _botContentView = [[UIView alloc]init];
+        [self addSubview:_botContentView];
+        [_botContentView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.right.bottom.equalTo(self);
+            make.top.equalTo(self).offset(80);
+        }];
+        
+        _chatFuncsView = [[TBChatFuncsView alloc]init];
+        [_botContentView addSubview:_chatFuncsView];
+        [_chatFuncsView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.edges.equalTo(_botContentView);
+        }];
+        
+        [_chatFuncsView configFuncs:@[@"文件"] images:@[@"im_chat_input_file"]];
+        @weakify(self);
+        _chatFuncsView.funcBtnClick = ^(NSInteger index, NSString * _Nonnull title) {
+            @strongify(self);
+            if ([title isEqualToString:@"文件"]){
+                [self openDocuments];
+            }
+        };
+        
     }
+}
+#pragma mark 打开文件选择器
+- (void)openDocuments{
+    UIWindow *keyWin = [[UIApplication sharedApplication] keyWindow];
+    [[TBCheckDocument shareCheck] showDocumentMenu:keyWin.rootViewController checkBlock:^(NSString * _Nonnull localPath) {
+        [[TBUploadManager sharedInstance] uploadWithFilePath:localPath progress:^(NSString *key, float percent) {
+            
+        } complete:^(BOOL isOk, NSDictionary *dic) {
+            if (isOk){
+                NSString *remoteUrl = dic[@"url"];
+                [self sendFileMessage:remoteUrl localPath:localPath];
+            }
+        }];
+    }];
 }
 #pragma mark 打开相册
 - (void)openAlubm{
@@ -150,10 +193,34 @@
         
     }];
     if ([info[UIImagePickerControllerMediaType] isEqualToString:@"public.image"]){
-        [self sendImageMessage];
+        
+        UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
+        NSData *data = UIImageJPEGRepresentation(image, 0.5);
+        NSString *copiedFile = [[TBFileManager sharedInstance] getCopyFilePath:[NSString stringWithFormat:@"%@.jpg",[[TBFileManager sharedInstance] getDateStr]]];
+        NSString *filePath = [[TBFileManager sharedInstance] copyToLocalWithData:data toPath:copiedFile];
+        [[TBUploadManager sharedInstance] uploadWithFilePath:filePath progress:^(NSString *key, float percent) {
+
+        } complete:^(BOOL isOk, NSDictionary *dic) {
+            if (isOk){
+                [self sendImageMessage:dic[@"url"] image:image data:data];
+            }
+            [[TBFileManager sharedInstance] deleteFileWithPath:filePath];
+        }];
     }
     else if ([info[UIImagePickerControllerMediaType] isEqualToString:@"public.movie"]){
-        [self sendVideoMessage];
+        NSURL *url = [info objectForKey:UIImagePickerControllerMediaURL];
+        NSData *data = [NSData dataWithContentsOfURL:url];
+        NSString *copiedFile = [[TBFileManager sharedInstance] getCopyFilePath:[NSString stringWithFormat:@"%@.mp4",[[TBFileManager sharedInstance] getDateStr]]];
+        NSString *filePath = [[TBFileManager sharedInstance] copyToLocalWithData:data toPath:copiedFile];
+        [[TBUploadManager sharedInstance] uploadWithFilePath:filePath progress:^(NSString *key, float percent) {
+            
+        } complete:^(BOOL isOk, NSDictionary *dic) {
+            if (isOk){
+                [self sendVideoMessage:dic[@"url"]];
+            }
+            [[TBFileManager sharedInstance] deleteFileWithPath:filePath];
+        }];
+        
     }
     [self clearCurrentActionBtn];
     
@@ -196,21 +263,42 @@
     }
 }
 #pragma mark 发送图片消息
-- (void)sendImageMessage{
+- (void)sendImageMessage:(NSString *)remoteUrl image:(UIImage *)img data:(NSData *)imgData{
     if (self.sendMessage){
         TBSendMessageModel *model = [[TBSendMessageModel alloc]init];
         model.messageType = SIMMsgType_IMAGE;
+        model.urlPath = remoteUrl;
+        model.imageData = imgData;
+        model.upImage = img;
         self.sendMessage(model);
     }
 }
 #pragma mark 发送视频消息
-- (void)sendVideoMessage{
+- (void)sendVideoMessage:(NSString *)remoteUrl{
     if (self.sendMessage){
         TBSendMessageModel *model = [[TBSendMessageModel alloc]init];
         model.messageType = SIMMsgType_VIDEO;
+        model.videPath = remoteUrl;
+        model.coverPath = [NSString stringWithFormat:@"%@?vframe/jpg/offset/1",remoteUrl];
         self.sendMessage(model);
     }
 }
+
+#pragma mark 发送文件消息
+- (void)sendFileMessage:(NSString *)remoteUrl localPath:(NSString *)lPath{
+    if (_sendMessage){
+        TBSendMessageModel *model = [[TBSendMessageModel alloc]init];
+        model.messageType = SIMMsgType_FILE;
+        model.fileSize = [[TBFileManager sharedInstance] sizeWithPath:lPath];
+        model.fileRemoteUrl = remoteUrl;
+        model.displayName = [lPath lastPathComponent];
+        self.sendMessage(model);
+        
+        [[TBFileManager sharedInstance] deleteFileWithPath:lPath];
+    }
+    
+}
+
 - (void)textViewDidChange:(UITextView *)textView{
     self.placeholderLab.hidden = ![textView.text isEqualToString:@""];
 }
