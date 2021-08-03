@@ -2,7 +2,7 @@
 //  TBIM.h
 //  TBIM
 //
-//  Created by xiaobing on 2020/12/28.
+//
 //
 
 #import <Foundation/Foundation.h>

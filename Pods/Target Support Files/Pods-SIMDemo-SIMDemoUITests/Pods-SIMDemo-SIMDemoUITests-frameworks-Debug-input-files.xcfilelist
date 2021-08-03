@@ -11,7 +11,6 @@ ${BUILT_PRODUCTS_DIR}/ReactiveCocoa/ReactiveCocoa.framework
 ${BUILT_PRODUCTS_DIR}/RealReachability/RealReachability.framework
 ${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework
 ${BUILT_PRODUCTS_DIR}/SocketRocket/SocketRocket.framework
-${PODS_ROOT}/TBIMLibrary/TBIMLibrary/Classes/TBIM.framework
 ${BUILT_PRODUCTS_DIR}/TBIMLibrary/TBIMLibrary.framework
 ${BUILT_PRODUCTS_DIR}/YYModel/YYModel.framework
 ${BUILT_PRODUCTS_DIR}/YYText/YYText.framework

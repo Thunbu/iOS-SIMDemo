@@ -65,6 +65,7 @@ connectionProxy:(NSDictionary *)connectionProxy
     self.requestMetrics.endDate = [NSDate date];
     self.requestMetrics.request = task.currentRequest;
     self.requestMetrics.response = task.response;
+    self.requestMetrics.error = error;
     self.requestMetrics.countOfResponseBodyBytesReceived = task.response.expectedContentLength;
     self.requestMetrics.countOfRequestHeaderBytesSent = [NSString stringWithFormat:@"%@", task.currentRequest.allHTTPHeaderFields].length;
     self.complete(task.response, self.requestMetrics,self.responseData, error);
@@ -87,12 +88,24 @@ connectionProxy:(NSDictionary *)connectionProxy
     self.requestMetrics.responseStartDate = transactionMetrics.responseStartDate;
     self.requestMetrics.responseEndDate = transactionMetrics.responseEndDate;
     
+    if ([transactionMetrics.networkProtocolName isEqualToString:@"http/1.0"]) {
+        self.requestMetrics.httpVersion = @"1.0";
+    } else if ([transactionMetrics.networkProtocolName isEqualToString:@"http/1.1"]) {
+        self.requestMetrics.httpVersion = @"1.1";
+    } else if ([transactionMetrics.networkProtocolName isEqualToString:@"h2"]) {
+        self.requestMetrics.httpVersion = @"2";
+    } else if ([transactionMetrics.networkProtocolName isEqualToString:@"h3"]) {
+        self.requestMetrics.httpVersion = @"3";
+    } else {
+        self.requestMetrics.httpVersion = transactionMetrics.networkProtocolName;
+    }
+    
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= 130000
     if (@available(iOS 13.0, *)) {
-        self.requestMetrics.localAddress = transactionMetrics.localAddress;
-        self.requestMetrics.localPort = transactionMetrics.localPort;
-        self.requestMetrics.remoteAddress = transactionMetrics.remoteAddress;
-        self.requestMetrics.remotePort = transactionMetrics.remotePort;
+        if (transactionMetrics.remoteAddress) {
+            self.requestMetrics.remoteAddress = transactionMetrics.remoteAddress;
+            self.requestMetrics.remotePort = transactionMetrics.remotePort;
+        }
     }
 #endif
     

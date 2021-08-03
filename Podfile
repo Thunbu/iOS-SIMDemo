@@ -1,8 +1,6 @@
 # Uncomment the next line to define a global platform for your project
 platform :ios, '9.0'
 
-use_frameworks!
-
 target 'SIMDemo' do
   # Comment the next line if you don't want to use dynamic frameworks
   
@@ -10,7 +8,12 @@ target 'SIMDemo' do
   source 'https://github.com/CocoaPods/Specs.git'
   source 'https://github.com/Thunbu/TBIMSpec.git'
 
-  pod 'TBIMLibrary', '0.0.132' # github 公开
+  pod 'TBIMLibrary', '0.0.134' # github 公开
+#  pod 'SIMSDK', :path => '../SIMSDK/'
+  
+  # 个推推送
+  pod 'GTSDK', '2.5.5.0-noidfa'
+  
   # UI相对布局库
   pod 'Masonry', '~> 1.1.0'
   # 图片加载库

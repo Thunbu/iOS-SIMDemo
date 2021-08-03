@@ -12,7 +12,7 @@
 @interface TBPreLoginVC ()
 
 @property(nonatomic, strong)UITextField *accountTxt;
-@property(nonatomic, strong)SIMSdkConfig *sdkConfig;
+
 @end
 
 @implementation TBPreLoginVC
@@ -94,10 +94,6 @@
 }
 - (void)initData{
     self.accountTxt.text = @"A_8589934615";
-    //初始化IMSDK
-    _sdkConfig = [[SIMSdkConfig alloc] init];
-    _sdkConfig.sdkAppId = @"1000000217"; // 用户申请的appid
-    [[SIMManager sharedInstance] initSdk:_sdkConfig];
 }
 - (void)loginBtnClick:(UIButton *)sender{
     if (self.accountTxt.text.length == 0) {
@@ -110,6 +106,16 @@
     [[SIMManager sharedInstance] SIM_loginSDKWithLoginParam:loginParam success:^(id  _Nonnull data) {
         [MBProgressHUD hideHUDForView:self.view animated:YES];
         [[TBChatManager sharedInstanced] remberCurrentUser:self.accountTxt.text];
+        
+        NSString *clientId = [[NSUserDefaults standardUserDefaults] valueForKey:@"clientId"];
+        if ([clientId length] > 0) {
+            [[SIMDeviceManager sharedInstance] report:clientId succ:^{
+                NSLog(@"IMSDK -----> 上传 deviceToken：%@ 成功 ", clientId);
+            } fail:^(SIMError * _Nonnull error) {
+                NSLog(@"IMSDK -----> 上传 deviceToken：%@ 失败 ", clientId);
+            }];
+        }
+        
         UIWindow *window = [[UIApplication sharedApplication] keyWindow];
         window.rootViewController = [[TBMainTabBarController alloc] init];
     } fail:^(SIMError * _Nullable error) {

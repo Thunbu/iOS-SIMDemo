@@ -1,6 +1,0 @@
-framework module SIMSDK {
-  umbrella header "SIMSDK-umbrella.h"
-
-  export *
-  module * { export * }
-}

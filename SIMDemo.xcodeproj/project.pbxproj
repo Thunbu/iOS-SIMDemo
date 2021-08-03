@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		55185E33AD47336CE211528D /* Pods_SIMDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F78A2347EA1E6EB258CF82D7 /* Pods_SIMDemo.framework */; };
+		05EC34DBFEA82F11BFF53613 /* libPods-SIMDemo-SIMDemoUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 595C0454EBE42884E229E053 /* libPods-SIMDemo-SIMDemoUITests.a */; };
+		1D7FCB43B20C079AC4084C70 /* libPods-SIMDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 59B55EC25C399878F67CAC66 /* libPods-SIMDemo.a */; };
+		58FBD7CF26AABA47004B3D08 /* AppDelegate+PushMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 58FBD7CE26AABA47004B3D08 /* AppDelegate+PushMessage.m */; };
 		624C9F81254FA5D40011D4C5 /* TBPreLoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 624C9F80254FA5D40011D4C5 /* TBPreLoginVC.m */; };
 		624C9FC7254FD2150011D4C5 /* AppMacro.h in Sources */ = {isa = PBXBuildFile; fileRef = 624C9FC6254FD2150011D4C5 /* AppMacro.h */; };
 		6264BBA325539529005C897C /* TBChatMsgPopMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 6264BBA225539529005C897C /* TBChatMsgPopMenu.m */; };
@@ -40,6 +42,7 @@
 		62EC9AE725528ABB00997836 /* TBChatIMageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 62EC9AE625528ABB00997836 /* TBChatIMageCell.m */; };
 		62FCCC582553CDB2001740FE /* TBChatVideoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 62FCCC572553CDB2001740FE /* TBChatVideoCell.m */; };
 		62FCCC5E2553D4B0001740FE /* TBChatMsgPreview.m in Sources */ = {isa = PBXBuildFile; fileRef = 62FCCC5D2553D4B0001740FE /* TBChatMsgPreview.m */; };
+		64CAFA91445FB3E6A41F604F /* libPods-SIMDemoTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DE3A3A4816BD6EE2769FD2D /* libPods-SIMDemoTests.a */; };
 		6E16D001254F9477002DAB09 /* TBChatManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E16D000254F9477002DAB09 /* TBChatManager.m */; };
 		6E16D00D254FEC8F002DAB09 /* NSArray+SIMMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E16D00C254FEC8F002DAB09 /* NSArray+SIMMessage.m */; };
 		6E49D98525416F3B00010564 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E49D98425416F3B00010564 /* AppDelegate.m */; };
@@ -58,8 +61,6 @@
 		6E884269254949D1007103C8 /* TBSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E884268254949D1007103C8 /* TBSessionManager.m */; };
 		6E884285254BA306007103C8 /* TBGroupManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E884284254BA306007103C8 /* TBGroupManager.m */; };
 		6E88428E254BB9A5007103C8 /* TBNetReqManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E88428D254BB9A5007103C8 /* TBNetReqManager.m */; };
-		A174B4504ECCD691644C783B /* Pods_SIMDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 622E8E4AA97275078536F575 /* Pods_SIMDemoTests.framework */; };
-		DDB7B1C4FBCE569570ABD681 /* Pods_SIMDemo_SIMDemoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93E497FD1F555929F10F58F8 /* Pods_SIMDemo_SIMDemoUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,9 +81,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0DE3A3A4816BD6EE2769FD2D /* libPods-SIMDemoTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SIMDemoTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		29F2B1E0E9074E86A4EB356F /* Pods-SIMDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SIMDemo.debug.xcconfig"; path = "Target Support Files/Pods-SIMDemo/Pods-SIMDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		58FBD7CD26AABA47004B3D08 /* AppDelegate+PushMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+PushMessage.h"; sourceTree = "<group>"; };
+		58FBD7CE26AABA47004B3D08 /* AppDelegate+PushMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+PushMessage.m"; sourceTree = "<group>"; };
+		595C0454EBE42884E229E053 /* libPods-SIMDemo-SIMDemoUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SIMDemo-SIMDemoUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		59B55EC25C399878F67CAC66 /* libPods-SIMDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SIMDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		621C635B264BA43C0066D6E0 /* SIMDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SIMDemo.entitlements; sourceTree = "<group>"; };
-		622E8E4AA97275078536F575 /* Pods_SIMDemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SIMDemoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		624C9F7F254FA5D40011D4C5 /* TBPreLoginVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TBPreLoginVC.h; sourceTree = "<group>"; };
 		624C9F80254FA5D40011D4C5 /* TBPreLoginVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TBPreLoginVC.m; sourceTree = "<group>"; };
 		624C9FC6254FD2150011D4C5 /* AppMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppMacro.h; sourceTree = "<group>"; };
@@ -184,11 +189,9 @@
 		6E88428D254BB9A5007103C8 /* TBNetReqManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TBNetReqManager.m; sourceTree = "<group>"; };
 		73BF244536E3BC21F3D52D04 /* Pods-SIMDemo-SIMDemoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SIMDemo-SIMDemoUITests.release.xcconfig"; path = "Target Support Files/Pods-SIMDemo-SIMDemoUITests/Pods-SIMDemo-SIMDemoUITests.release.xcconfig"; sourceTree = "<group>"; };
 		7BBE219EEC867E525398EA23 /* Pods-SIMDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SIMDemoTests.debug.xcconfig"; path = "Target Support Files/Pods-SIMDemoTests/Pods-SIMDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
-		93E497FD1F555929F10F58F8 /* Pods_SIMDemo_SIMDemoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SIMDemo_SIMDemoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2CB813A05517C8A72136D4A /* Pods-SIMDemo-SIMDemoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SIMDemo-SIMDemoUITests.debug.xcconfig"; path = "Target Support Files/Pods-SIMDemo-SIMDemoUITests/Pods-SIMDemo-SIMDemoUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		E465EB20F64564B3B9EB3ED5 /* Pods-SIMDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SIMDemo.release.xcconfig"; path = "Target Support Files/Pods-SIMDemo/Pods-SIMDemo.release.xcconfig"; sourceTree = "<group>"; };
 		F1C9F4FBCFD115D75ECC147B /* Pods-SIMDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SIMDemoTests.release.xcconfig"; path = "Target Support Files/Pods-SIMDemoTests/Pods-SIMDemoTests.release.xcconfig"; sourceTree = "<group>"; };
-		F78A2347EA1E6EB258CF82D7 /* Pods_SIMDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SIMDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -196,7 +199,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				55185E33AD47336CE211528D /* Pods_SIMDemo.framework in Frameworks */,
+				1D7FCB43B20C079AC4084C70 /* libPods-SIMDemo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -204,7 +207,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A174B4504ECCD691644C783B /* Pods_SIMDemoTests.framework in Frameworks */,
+				64CAFA91445FB3E6A41F604F /* libPods-SIMDemoTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -212,7 +215,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DDB7B1C4FBCE569570ABD681 /* Pods_SIMDemo_SIMDemoUITests.framework in Frameworks */,
+				05EC34DBFEA82F11BFF53613 /* libPods-SIMDemo-SIMDemoUITests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -369,6 +372,8 @@
 				621C635B264BA43C0066D6E0 /* SIMDemo.entitlements */,
 				6E49D98325416F3B00010564 /* AppDelegate.h */,
 				6E49D98425416F3B00010564 /* AppDelegate.m */,
+				58FBD7CD26AABA47004B3D08 /* AppDelegate+PushMessage.h */,
+				58FBD7CE26AABA47004B3D08 /* AppDelegate+PushMessage.m */,
 				624C9F7F254FA5D40011D4C5 /* TBPreLoginVC.h */,
 				624C9F80254FA5D40011D4C5 /* TBPreLoginVC.m */,
 				62EC9A7F255249BA00997836 /* Tool */,
@@ -495,9 +500,9 @@
 		E3FA8FC6D8BF0C1C7F9CD405 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				F78A2347EA1E6EB258CF82D7 /* Pods_SIMDemo.framework */,
-				93E497FD1F555929F10F58F8 /* Pods_SIMDemo_SIMDemoUITests.framework */,
-				622E8E4AA97275078536F575 /* Pods_SIMDemoTests.framework */,
+				59B55EC25C399878F67CAC66 /* libPods-SIMDemo.a */,
+				595C0454EBE42884E229E053 /* libPods-SIMDemo-SIMDemoUITests.a */,
+				0DE3A3A4816BD6EE2769FD2D /* libPods-SIMDemoTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -513,7 +518,7 @@
 				6E49D97C25416F3B00010564 /* Sources */,
 				6E49D97D25416F3B00010564 /* Frameworks */,
 				6E49D97E25416F3B00010564 /* Resources */,
-				3F78CE6645DD04D952A9040E /* [CP] Embed Pods Frameworks */,
+				8AEBD0EC21DAA956D8383BB3 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -551,7 +556,7 @@
 				6E49D9A225416F3C00010564 /* Sources */,
 				6E49D9A325416F3C00010564 /* Frameworks */,
 				6E49D9A425416F3C00010564 /* Resources */,
-				EDDED384A0108815A9C9879A /* [CP] Embed Pods Frameworks */,
+				0E61E9861F81799471A7C7E3 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -633,6 +638,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		0E61E9861F81799471A7C7E3 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SIMDemo-SIMDemoUITests/Pods-SIMDemo-SIMDemoUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SIMDemo-SIMDemoUITests/Pods-SIMDemo-SIMDemoUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SIMDemo-SIMDemoUITests/Pods-SIMDemo-SIMDemoUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		19AA7F181C3F6042091A7D8C /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -677,23 +699,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		3F78CE6645DD04D952A9040E /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SIMDemo/Pods-SIMDemo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SIMDemo/Pods-SIMDemo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SIMDemo/Pods-SIMDemo-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		81AB18881622FF16FEF87140 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -716,21 +721,21 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		EDDED384A0108815A9C9879A /* [CP] Embed Pods Frameworks */ = {
+		8AEBD0EC21DAA956D8383BB3 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SIMDemo-SIMDemoUITests/Pods-SIMDemo-SIMDemoUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-SIMDemo/Pods-SIMDemo-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			name = "[CP] Embed Pods Frameworks";
+			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SIMDemo-SIMDemoUITests/Pods-SIMDemo-SIMDemoUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-SIMDemo/Pods-SIMDemo-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SIMDemo-SIMDemoUITests/Pods-SIMDemo-SIMDemoUITests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SIMDemo/Pods-SIMDemo-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -767,6 +772,7 @@
 				6E49D98525416F3B00010564 /* AppDelegate.m in Sources */,
 				6E88425925493E6B007103C8 /* UIColor+TB.m in Sources */,
 				624C9F81254FA5D40011D4C5 /* TBPreLoginVC.m in Sources */,
+				58FBD7CF26AABA47004B3D08 /* AppDelegate+PushMessage.m in Sources */,
 				62EC9A18254FD4C600997836 /* TBChatVC.m in Sources */,
 				629B590C25C02B58001CB274 /* TBUploadManager.m in Sources */,
 				624C9FC7254FD2150011D4C5 /* AppMacro.h in Sources */,
@@ -960,7 +966,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 3;
-				DEVELOPMENT_TEAM = DA32M7N898;
+				DEVELOPMENT_TEAM = V7S7ZQC6QG;
 				ENABLE_BITCODE = NO;
 				EXCLUDED_ARCHS = "";
 				FRAMEWORK_SEARCH_PATHS = (
